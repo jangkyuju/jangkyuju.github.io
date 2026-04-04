@@ -1,0 +1,85 @@
+<div class="blog-sidebar-inner">
+
+  <!-- Sidebar header -->
+  <div class="blog-sidebar-header">
+    <a href="{{ '/blog' | relative_url }}" class="blog-sidebar-home-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+           viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+      </svg>
+      <span>Blog</span>
+    </a>
+  </div>
+
+  <!-- Navigation tree -->
+  <nav class="blog-nav" aria-label="Blog navigation">
+
+    {% assign nav_data = site.data.blog-nav %}
+    {% if nav_data %}
+
+      {% for section in nav_data %}
+      <div class="blog-nav-section">
+
+        <button class="blog-nav-category-toggle" aria-expanded="true">
+          <svg class="blog-nav-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+          <span>{{ section.title }}</span>
+        </button>
+
+        <ul class="blog-nav-list">
+          {% for item in section.posts %}
+          {% assign is_active = false %}
+          {% if page.url contains item.slug %}
+            {% assign is_active = true %}
+          {% endif %}
+          <li>
+            <a href="{{ site.baseurl }}/posts/{{ item.slug }}/"
+               class="blog-nav-link{% if is_active %} active{% endif %}">
+              {{ item.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+
+      </div>
+      {% endfor %}
+
+    {% else %}
+
+      <!-- Fallback: auto-generate from site.posts grouped by category -->
+      {% assign posts_by_cat = site.posts | group_by_exp: "post", "post.categories.first | default: 'Uncategorized'" %}
+      {% for group in posts_by_cat %}
+      <div class="blog-nav-section">
+
+        <button class="blog-nav-category-toggle" aria-expanded="true">
+          <svg class="blog-nav-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+          <span>{{ group.name }}</span>
+        </button>
+
+        <ul class="blog-nav-list">
+          {% for post in group.items %}
+          <li>
+            <a href="{{ post.url | relative_url }}"
+               class="blog-nav-link{% if page.url == post.url %} active{% endif %}">
+              {{ post.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+
+      </div>
+      {% endfor %}
+
+    {% endif %}
+
+  </nav>
+
+</div>

@@ -1,0 +1,24 @@
+# Blog navigation tree
+# Each section has a title and a list of posts.
+# slug: the post filename without the date prefix and .md extension
+#   e.g., _posts/2026-01-20-acm-iui-2026.md → slug: 2026-01-20-acm-iui-2026
+# When using GitBook GitHub Sync, add new posts here after syncing.
+
+- title: Research
+  posts:
+    - slug: 2026-01-20-acm-iui-2026
+      title: "Paper Accepted to ACM IUI 2026"
+    - slug: 2025-10-10-ieee-vis-2025
+      title: "IEEE VIS 2025: Visualization Literacy"
+    - slug: 2026-02-15-ai-literacy-prediction
+      title: "AI-Based Literacy Score Prediction"
+
+- title: Reflection
+  posts:
+    - slug: 2025-08-25-tableau-internship
+      title: "Summer at Tableau Research"
+
+- title: Tutorial
+  posts:
+    - slug: 2025-07-05-getting-started-eyetracking
+      title: "Getting Started with Eye-Tracking"

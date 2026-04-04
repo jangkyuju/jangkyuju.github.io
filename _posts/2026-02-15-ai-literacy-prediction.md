@@ -1,4 +1,5 @@
 ---
+layout: blog-doc
 title: "AI-Based Literacy Score Prediction Model Launch"
 date: 2026-02-15 00:00:00 +0000
 categories: [News]

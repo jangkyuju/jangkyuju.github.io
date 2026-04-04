@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}" data-mode="">
+<head>
+  {% include head.html %}
+</head>
+<body>
+
+  {% include custom-topbar.html %}
+
+  <div class="blog-doc-wrapper">
+
+    <!-- Sidebar toggle button (mobile) -->
+    <button class="blog-sidebar-toggle" id="blog-sidebar-toggle" aria-label="Toggle sidebar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+           viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/>
+      </svg>
+      <span>Contents</span>
+    </button>
+
+    <!-- Sidebar -->
+    <aside class="blog-sidebar" id="blog-sidebar">
+      {% include blog-sidebar.html %}
+    </aside>
+
+    <!-- Overlay (mobile) -->
+    <div class="blog-sidebar-overlay" id="blog-sidebar-overlay"></div>
+
+    <!-- Main content -->
+    <main class="blog-doc-content">
+      {{ content }}
+    </main>
+
+  </div>
+
+  {% include custom-footer.html %}
+
+  <!-- Sidebar toggle JS -->
+  <script>
+    (function() {
+      var toggle = document.getElementById('blog-sidebar-toggle');
+      var sidebar = document.getElementById('blog-sidebar');
+      var overlay = document.getElementById('blog-sidebar-overlay');
+
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      toggle.addEventListener('click', function() {
+        if (sidebar.classList.contains('open')) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
+      });
+
+      overlay.addEventListener('click', closeSidebar);
+    })();
+  </script>
+
+  <!-- Collapsible sidebar sections -->
+  <script>
+    document.querySelectorAll('.blog-nav-category-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var section = btn.closest('.blog-nav-section');
+        section.classList.toggle('collapsed');
+      });
+    });
+  </script>
+
+</body>
+</html>

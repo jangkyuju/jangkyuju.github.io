@@ -1,4 +1,5 @@
 ---
+layout: blog-doc
 title: "Summer at Tableau Research: Reflections and Learnings"
 date: 2025-08-25 00:00:00 +0000
 categories: [Reflection]

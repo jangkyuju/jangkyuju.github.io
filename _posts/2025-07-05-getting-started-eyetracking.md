@@ -1,4 +1,5 @@
 ---
+layout: blog-doc
 title: "Getting Started with Eye-Tracking Research in HCI"
 date: 2025-07-05 00:00:00 +0000
 categories: [Tutorial]
