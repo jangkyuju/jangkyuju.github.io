@@ -36,10 +36,32 @@ layout: default
     </div>
   </div>
 
+  <!-- Filter Bar -->
+  <div class="project-filters" id="project-filters">
+    <div class="filter-group">
+      <span class="filter-label">Status</span>
+      <button class="filter-btn active" data-filter="status" data-value="all">All</button>
+      <button class="filter-btn" data-filter="status" data-value="Ongoing">Ongoing</button>
+      <button class="filter-btn" data-filter="status" data-value="Completed">Completed</button>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Organization</span>
+      <button class="filter-btn active" data-filter="org" data-value="all">All</button>
+      <button class="filter-btn" data-filter="org" data-value="Hyundai Motor Group">Hyundai</button>
+      <button class="filter-btn" data-filter="org" data-value="Korea University, School of Psychology">Korea Univ.</button>
+    </div>
+  </div>
+
+  <p class="filter-count" id="filter-count"></p>
+
   <!-- Project Cards -->
-  <div class="projects-grid">
+  <div class="projects-grid" id="projects-grid">
     {% for project in site.data.projects %}
-    <article class="project-card">
+    {% assign tags_str = project.tags | join: '||' %}
+    <article class="project-card"
+             data-status="{{ project.status }}"
+             data-org="{{ project.organization }}"
+             data-tags="{{ tags_str }}">
 
       <!-- Card Header -->
       <div class="project-card-header">
@@ -64,24 +86,30 @@ layout: default
       <!-- Description -->
       <p class="project-desc">{{ project.description }}</p>
 
-      <!-- Tags -->
+      <!-- Tags (clickable) -->
       <div class="project-tags">
         {% for tag in project.tags %}
-          <span class="project-tag">{{ tag }}</span>
+          <button class="project-tag filter-tag-btn" data-tag="{{ tag }}">{{ tag }}</button>
         {% endfor %}
       </div>
 
       <!-- Links -->
       {% if project.links %}
       <div class="pub-links" style="margin-top:1rem;">
+        {% if project.links.paper %}
+        <a href="{{ project.links.paper }}" class="pub-link" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Paper
+        </a>
+        {% endif %}
         {% if project.links.demo %}
-        <a href="{{ project.links.demo }}" class="pub-link pub-link-primary" target="_blank" rel="noopener noreferrer">Demo</a>
+        <a href="{{ project.links.demo }}" class="pub-link" target="_blank" rel="noopener noreferrer">Demo</a>
         {% endif %}
         {% if project.links.code %}
-        <a href="{{ project.links.code }}" class="pub-link pub-link-outline" target="_blank" rel="noopener noreferrer">Code</a>
+        <a href="{{ project.links.code }}" class="pub-link" target="_blank" rel="noopener noreferrer">Code</a>
         {% endif %}
         {% if project.links.report %}
-        <a href="{{ project.links.report }}" class="pub-link pub-link-outline" target="_blank" rel="noopener noreferrer">Report</a>
+        <a href="{{ project.links.report }}" class="pub-link" target="_blank" rel="noopener noreferrer">Report</a>
         {% endif %}
       </div>
       {% endif %}
@@ -89,5 +117,58 @@ layout: default
     </article>
     {% endfor %}
   </div>
+
+  <script>
+  (function() {
+    var activeFilters = { status: 'all', org: 'all', tag: null };
+
+    function applyFilters() {
+      var cards = document.querySelectorAll('#projects-grid .project-card');
+      var visible = 0;
+      cards.forEach(function(card) {
+        var statusOk = activeFilters.status === 'all' || card.dataset.status === activeFilters.status;
+        var orgOk    = activeFilters.org === 'all'    || card.dataset.org === activeFilters.org;
+        var tagOk    = !activeFilters.tag             || card.dataset.tags.split('||').indexOf(activeFilters.tag) !== -1;
+        var show = statusOk && orgOk && tagOk;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      var countEl = document.getElementById('filter-count');
+      countEl.textContent = visible + ' of ' + cards.length + ' projects';
+    }
+
+    // Status / Org filter buttons
+    document.querySelectorAll('.filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var group = btn.dataset.filter;
+        document.querySelectorAll('.filter-btn[data-filter="' + group + '"]').forEach(function(b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+        activeFilters[group] = btn.dataset.value;
+        applyFilters();
+      });
+    });
+
+    // Tag filter buttons on cards
+    document.querySelectorAll('.filter-tag-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var tag = btn.dataset.tag;
+        if (activeFilters.tag === tag) {
+          activeFilters.tag = null;
+          document.querySelectorAll('.filter-tag-btn').forEach(function(b) { b.classList.remove('tag-active'); });
+        } else {
+          activeFilters.tag = tag;
+          document.querySelectorAll('.filter-tag-btn').forEach(function(b) {
+            b.classList.toggle('tag-active', b.dataset.tag === tag);
+          });
+        }
+        applyFilters();
+      });
+    });
+
+    applyFilters();
+  })();
+  </script>
 
 </div>

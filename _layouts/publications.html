@@ -132,9 +132,10 @@ layout: default
               <span class="pub-venue-year">{{ pub.year }}</span>
             </p>
 
-            <!-- Links -->
-            {% if pub.links %}
-            <div class="pub-links">
+            <!-- Links + BibTeX -->
+            <div class="pub-links-row">
+              {% if pub.links %}
+              <div class="pub-links">
               {% if pub.links.paper %}
               <a href="{{ pub.links.paper }}" class="pub-link" target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
@@ -192,8 +193,42 @@ layout: default
                 Demo
               </a>
               {% endif %}
-            </div>
-            {% endif %}
+              </div><!-- /.pub-links -->
+              {% endif %}
+
+              <!-- BibTeX + Citations -->
+              <div class="pub-meta-actions">
+                {% if pub.citations and pub.citations > 0 %}
+                <a href="{{ pub.links.paper }}" target="_blank" rel="noopener noreferrer"
+                   class="pub-citations" title="Cited by {{ pub.citations }}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                       fill="none" stroke="currentColor" stroke-width="2"
+                       stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                  Cited by {{ pub.citations }}
+                </a>
+                {% endif %}
+                {% if pub.bibtex %}
+                <button class="pub-bibtex-btn" onclick="toggleBibtex(this)" title="Copy BibTeX">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                       fill="none" stroke="currentColor" stroke-width="2"
+                       stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                  </svg>
+                  Cite
+                </button>
+                <div class="pub-bibtex-box" style="display:none;">
+                  <pre class="pub-bibtex-pre">{{ pub.bibtex | strip }}</pre>
+                  <button class="pub-bibtex-copy" onclick="copyBibtex(this)">Copy</button>
+                </div>
+                {% endif %}
+              </div>
+            </div><!-- /.pub-links-row -->
 
           </div><!-- /.pub-content -->
         </div><!-- /.pub-card-inner -->
@@ -202,6 +237,22 @@ layout: default
     {% endfor %}
   </div>
   {% endfor %}
+
+  <script>
+  function toggleBibtex(btn) {
+    var box = btn.nextElementSibling;
+    var isOpen = box.style.display !== 'none';
+    box.style.display = isOpen ? 'none' : 'block';
+    btn.textContent = isOpen ? 'Cite' : 'Close';
+  }
+  function copyBibtex(btn) {
+    var pre = btn.previousElementSibling;
+    navigator.clipboard.writeText(pre.textContent).then(function() {
+      btn.textContent = 'Copied!';
+      setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+    });
+  }
+  </script>
 
   <!-- Peer Review Service -->
   <div class="peer-review-section">

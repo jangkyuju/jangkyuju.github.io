@@ -20,20 +20,20 @@ layout: default
 
     <!-- Bio Content -->
     <div class="hero-bio">
-      <h1>{{ site.data.profile.name }}</h1>
+      <h1 class="fade-up" style="animation-delay:0.05s">{{ site.data.profile.name }}</h1>
       {% if site.data.profile.tagline %}
-      <p class="hero-tagline">{{ site.data.profile.tagline }}</p>
+      <p class="hero-tagline fade-up" style="animation-delay:0.12s">{{ site.data.profile.tagline }}</p>
       {% endif %}
-      <p class="hero-affiliation">{{ site.data.profile.lab }} | {{ site.data.profile.university }}</p>
+      <p class="hero-affiliation fade-up" style="animation-delay:0.18s">{{ site.data.profile.lab }} | {{ site.data.profile.university }}</p>
 
-      <div style="margin-bottom:1.5rem;">
+      <div class="fade-up" style="margin-bottom:1.5rem;animation-delay:0.24s">
         {% for para in site.data.profile.bio %}
           <p class="hero-bio-text">{{ para }}</p>
         {% endfor %}
       </div>
 
       <!-- Social Links -->
-      <div class="social-links">
+      <div class="social-links fade-up" style="animation-delay:0.3s">
 
         <a href="mailto:{{ site.data.profile.email }}" class="social-btn" aria-label="Email">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -76,8 +76,27 @@ layout: default
 
       </div>
 
+      <!-- CTA Buttons -->
+      <div class="hero-cta fade-up" style="animation-delay:0.36s">
+        {% if site.data.profile.cv_pdf %}
+        <a href="{{ site.data.profile.cv_pdf }}" target="_blank" rel="noopener noreferrer" class="btn-cv">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download CV
+        </a>
+        {% endif %}
+        <a href="{{ '/contact' | relative_url }}" class="btn-contact">
+          Get in Touch
+        </a>
+      </div>
+
       <!-- Research Interests -->
-      <div class="research-interests">
+      <div class="research-interests fade-up" style="animation-delay:0.42s">
         <h3>
           <span>✨</span>
           <span>Research Interests</span>

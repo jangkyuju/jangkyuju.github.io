@@ -12,74 +12,103 @@
     </a>
   </div>
 
-  <!-- Navigation tree -->
-  <nav class="blog-nav" aria-label="Blog navigation">
+  <!-- Search -->
+  <div class="blog-search-wrap">
+    <svg class="blog-search-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+         viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input type="text" id="blog-search-input" class="blog-search-input"
+           placeholder="Search posts..." autocomplete="off" aria-label="Search posts">
+  </div>
 
-    {% assign nav_data = site.data.blog-nav %}
-    {% if nav_data %}
+  <!-- Search Results (hidden by default) -->
+  <ul class="blog-search-results" id="blog-search-results" style="display:none;"></ul>
 
-      {% for section in nav_data %}
-      <div class="blog-nav-section">
-
-        <button class="blog-nav-category-toggle" aria-expanded="true">
-          <svg class="blog-nav-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-               viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-          <span>{{ section.title }}</span>
-        </button>
-
-        <ul class="blog-nav-list">
-          {% for item in section.posts %}
-          {% assign is_active = false %}
-          {% if page.url contains item.slug %}
-            {% assign is_active = true %}
-          {% endif %}
-          <li>
-            <a href="{{ site.baseurl }}/posts/{{ item.slug }}/"
-               class="blog-nav-link{% if is_active %} active{% endif %}">
-              {{ item.title }}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-
-      </div>
-      {% endfor %}
-
-    {% else %}
-
-      <!-- Fallback: auto-generate from site.posts grouped by category -->
-      {% assign posts_by_cat = site.posts | group_by_exp: "post", "post.categories.first | default: 'Uncategorized'" %}
-      {% for group in posts_by_cat %}
-      <div class="blog-nav-section">
-
-        <button class="blog-nav-category-toggle" aria-expanded="true">
-          <svg class="blog-nav-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-               viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
-          <span>{{ group.name }}</span>
-        </button>
-
-        <ul class="blog-nav-list">
-          {% for post in group.items %}
-          <li>
-            <a href="{{ post.url | relative_url }}"
-               class="blog-nav-link{% if page.url == post.url %} active{% endif %}">
-              {{ post.title }}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-
-      </div>
-      {% endfor %}
-
-    {% endif %}
-
+  <!-- Navigation tree — auto-generated from site.posts -->
+  <nav class="blog-nav" id="blog-nav-tree" aria-label="Blog navigation">
+    {% assign posts_by_cat = site.posts | group_by_exp: "post", "post.categories.first | default: 'Uncategorized'" %}
+    {% for group in posts_by_cat %}
+    <div class="blog-nav-section">
+      <button class="blog-nav-category-toggle" aria-expanded="true">
+        <svg class="blog-nav-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+        <span>{{ group.name }}</span>
+      </button>
+      <ul class="blog-nav-list">
+        {% for post in group.items %}
+        <li>
+          <a href="{{ post.url | relative_url }}"
+             class="blog-nav-link{% if page.url == post.url %} active{% endif %}">
+            {{ post.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
   </nav>
 
 </div>
+
+<!-- Lunr.js search -->
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+<script>
+(function() {
+  var searchInput = document.getElementById('blog-search-input');
+  var searchResults = document.getElementById('blog-search-results');
+  var navTree = document.getElementById('blog-nav-tree');
+  var idx, posts;
+
+  fetch('{{ "/search.json" | relative_url }}')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      posts = data;
+      idx = lunr(function() {
+        this.ref('url');
+        this.field('title', { boost: 10 });
+        this.field('categories', { boost: 5 });
+        this.field('excerpt');
+        data.forEach(function(post) { this.add(post); }, this);
+      });
+    });
+
+  searchInput.addEventListener('input', function() {
+    var query = searchInput.value.trim();
+    if (!query || !idx) {
+      searchResults.style.display = 'none';
+      navTree.style.display = '';
+      return;
+    }
+    navTree.style.display = 'none';
+    try {
+      var results = idx.search(query + '*');
+      searchResults.innerHTML = '';
+      if (results.length === 0) {
+        searchResults.innerHTML = '<li class="blog-search-empty">No results found.</li>';
+      } else {
+        results.slice(0, 8).forEach(function(r) {
+          var post = posts.find(function(p) { return p.url === r.ref; });
+          if (!post) return;
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = post.url;
+          a.className = 'blog-nav-link';
+          a.innerHTML = '<span class="search-result-title">' + post.title + '</span>' +
+            '<span class="search-result-meta">' + post.date + ' · ' + (post.categories || '') + '</span>';
+          li.appendChild(a);
+          searchResults.appendChild(li);
+        });
+      }
+      searchResults.style.display = 'block';
+    } catch(e) {
+      searchResults.style.display = 'none';
+      navTree.style.display = '';
+    }
+  });
+})();
+</script>
