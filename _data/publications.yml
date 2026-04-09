@@ -18,6 +18,7 @@
   year: 2024
   type: Journal
   status: Published
+  featured: true
   citations: 0
   tldr: "Increasing the visual complexity of automotive head-up displays amplifies attentional tunneling, impairing drivers' ability to detect peripheral hazards."
   image: ""
@@ -65,6 +66,7 @@
   year: 2023
   type: Journal
   status: Published
+  featured: true
   citations: 5
   tldr: "Reward-associated stimuli capture attention more strongly when participants actively explore for reward information, suggesting exploration amplifies value-driven attentional capture."
   image: ""

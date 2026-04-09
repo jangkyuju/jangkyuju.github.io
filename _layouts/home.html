@@ -5,38 +5,27 @@ layout: default
 <div class="page-container">
 
   <!-- ============================================================
-       HERO SECTION — Profile + Bio
+       HERO — Profile image left, bio right
        ============================================================ -->
-  <section class="hero-grid" aria-label="Profile">
+  <section class="home-hero fade-up" aria-label="Profile">
 
-    <!-- Profile Image -->
-    <div class="profile-img-wrap">
-      <img
-        src="{{ site.data.profile.avatar | default: '/assets/img/profile.jpg' | relative_url }}"
-        alt="{{ site.data.profile.name }} profile photo"
-        onerror="this.style.display='none'"
-      >
-    </div>
-
-    <!-- Bio Content -->
-    <div class="hero-bio">
-      <h1 class="fade-up" style="animation-delay:0.05s">{{ site.data.profile.name }}</h1>
-      {% if site.data.profile.tagline %}
-      <p class="hero-tagline fade-up" style="animation-delay:0.12s">{{ site.data.profile.tagline }}</p>
-      {% endif %}
-      <p class="hero-affiliation fade-up" style="animation-delay:0.18s">{{ site.data.profile.lab }} | {{ site.data.profile.university }}</p>
-
-      <div class="fade-up" style="margin-bottom:1.5rem;animation-delay:0.24s">
-        {% for para in site.data.profile.bio %}
-          <p class="hero-bio-text">{{ para }}</p>
-        {% endfor %}
+    <!-- Image column -->
+    <div class="home-hero-image-col">
+      <div class="home-profile-glow-wrap">
+        <div class="home-profile-glow"></div>
+        <img
+          src="{{ site.data.profile.avatar | default: '/assets/img/profile.jpg' | relative_url }}"
+          alt="{{ site.data.profile.name }} profile photo"
+          class="home-profile-img"
+          onerror="this.style.display='none'"
+        >
       </div>
 
-      <!-- Social Links -->
-      <div class="social-links fade-up" style="animation-delay:0.3s">
+      <!-- Social icon buttons -->
+      <div class="home-social-row">
 
-        <a href="mailto:{{ site.data.profile.email }}" class="social-btn" aria-label="Email">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+        <a href="mailto:{{ site.data.profile.email }}" class="home-social-btn" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -45,8 +34,8 @@ layout: default
         </a>
 
         <a href="{{ site.data.profile.google_scholar }}" target="_blank" rel="noopener noreferrer"
-           class="social-btn" aria-label="Google Scholar">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+           class="home-social-btn" aria-label="Google Scholar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
@@ -55,8 +44,8 @@ layout: default
         </a>
 
         <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener noreferrer"
-           class="social-btn" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+           class="home-social-btn" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -66,8 +55,8 @@ layout: default
         </a>
 
         <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer"
-           class="social-btn" aria-label="GitHub">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+           class="home-social-btn" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
@@ -75,57 +64,52 @@ layout: default
         </a>
 
       </div>
+    </div>
 
-      <!-- CTA Buttons -->
-      <div class="hero-cta fade-up" style="animation-delay:0.36s">
-        {% if site.data.profile.cv_pdf %}
-        <a href="{{ site.data.profile.cv_pdf }}" target="_blank" rel="noopener noreferrer" class="btn-cv">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
-               fill="none" stroke="currentColor" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-          </svg>
-          Download CV
-        </a>
-        {% endif %}
-        <a href="{{ '/contact' | relative_url }}" class="btn-contact">
-          Get in Touch
-        </a>
+    <!-- Bio column -->
+    <div class="home-hero-bio">
+      <h1>{{ site.data.profile.name }}</h1>
+
+      {% if site.data.profile.tagline %}
+      <p class="home-tagline">{{ site.data.profile.tagline }}</p>
+      {% endif %}
+
+      <p class="home-affiliation">{{ site.data.profile.lab }} · {{ site.data.profile.university }}</p>
+
+      <div class="home-bio-text">
+        {% for para in site.data.profile.bio %}
+          <p>{{ para }}</p>
+        {% endfor %}
       </div>
 
-      <!-- Research Interests -->
-      <div class="research-interests fade-up" style="animation-delay:0.42s">
-        <h3>
-          <span>✨</span>
-          <span>Research Interests</span>
-        </h3>
+      <!-- Research interests -->
+      {% if site.data.profile.research_interests %}
+      <div class="home-interests">
+        <h3>Research Interests</h3>
         <div class="interests-tags">
           {% for interest in site.data.profile.research_interests %}
             <span class="interest-tag">{{ interest }}</span>
           {% endfor %}
         </div>
       </div>
-
+      {% endif %}
     </div>
+
   </section>
 
   <!-- ============================================================
-       NEWS + RECENT POSTS — Side by Side
+       NEWS
        ============================================================ -->
-  <section class="news-posts-grid" aria-label="News and recent posts">
+  <section class="home-section" aria-label="News">
+    <div class="home-section-header">
+      <h2 class="home-section-title">News</h2>
+    </div>
 
-    <!-- News Card -->
-    <div class="section-card">
-      <div class="section-card-header">
-        <h2 class="section-card-title">News</h2>
-      </div>
-
+    <div class="home-news-card">
       {% for item in site.data.news %}
-      <div class="news-item">
-        <div class="news-date">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+      <div class="home-news-item">
+        <div class="home-news-date">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
                viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -135,47 +119,95 @@ layout: default
           </svg>
           {{ item.date }}
         </div>
-        <p class="news-content">{{ item.content }}</p>
-        {% if item.link %}
-          <a href="{{ item.link | relative_url }}" class="news-link">Read more →</a>
-        {% endif %}
+        <div class="home-news-content-col">
+          <p class="home-news-text">{{ item.content }}</p>
+          {% if item.link %}
+            <a href="{{ item.link | relative_url }}" class="home-news-link">Read more →</a>
+          {% endif %}
+        </div>
       </div>
       {% endfor %}
     </div>
-
-    <!-- Recent Posts Card -->
-    <div class="section-card">
-      <div class="section-card-header">
-        <h2 class="section-card-title">Recent Posts</h2>
-        <a href="{{ '/blog' | relative_url }}" class="view-all-link">
-          View all
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-               viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-            <polyline points="15 3 21 3 21 9"/>
-            <line x1="10" y1="14" x2="21" y2="3"/>
-          </svg>
-        </a>
-      </div>
-
-      {% for post in site.posts limit: 3 %}
-      <div class="post-item">
-        {% assign category = post.categories.first | default: 'Research' %}
-        <span class="post-category category-{{ category | downcase }}">{{ category }}</span>
-        <a href="{{ post.url | relative_url }}" class="post-title-link">
-          <h3>{{ post.title }}</h3>
-          <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
-        </a>
-      </div>
-      {% endfor %}
-
-      {% if site.posts.size == 0 %}
-        <p style="color: var(--custom-muted-fg); font-size: 0.875rem;">No posts yet.</p>
-      {% endif %}
-
-    </div>
-
   </section>
+
+  <!-- ============================================================
+       SELECTED PUBLICATIONS
+       ============================================================ -->
+  {% assign featured_pubs = site.data.publications | where: "featured", true %}
+  {% if featured_pubs.size > 0 %}
+  <section class="home-section" aria-label="Selected publications">
+    <div class="home-section-header">
+      <h2 class="home-section-title">Selected Publications</h2>
+      <a href="{{ '/publications' | relative_url }}" class="view-all-link">View all →</a>
+    </div>
+
+    <div class="home-pubs-grid">
+      {% for pub in featured_pubs %}
+      <article class="home-pub-card">
+
+        <!-- Image -->
+        <div class="home-pub-image-wrap">
+          {% if pub.image and pub.image != "" %}
+            <img src="{{ pub.image | relative_url }}" alt="{{ pub.title }}" class="home-pub-image" loading="lazy">
+          {% else %}
+            <div class="home-pub-image-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="1.5"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>No image</span>
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Content -->
+        <div class="home-pub-content">
+          <p class="home-pub-venue">
+            {% if pub.venue_short and pub.venue_short != "" %}{{ pub.venue_short }}{% else %}{{ pub.venue }}{% endif %}
+            &nbsp;·&nbsp;{{ pub.year }}
+          </p>
+          <h3 class="home-pub-title">{{ pub.title }}</h3>
+          {% if pub.tldr and pub.tldr != "" %}
+            <p class="home-pub-tldr">{{ pub.tldr }}</p>
+          {% endif %}
+          <div class="home-pub-links">
+            {% if pub.links.paper %}
+            <a href="{{ pub.links.paper }}" class="home-pub-link" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              Paper
+            </a>
+            {% endif %}
+            {% if pub.links.arxiv %}
+            <a href="{{ pub.links.arxiv }}" class="home-pub-link" target="_blank" rel="noopener noreferrer">
+              arXiv
+            </a>
+            {% endif %}
+            {% if pub.links.code %}
+            <a href="{{ pub.links.code }}" class="home-pub-link" target="_blank" rel="noopener noreferrer">
+              Code
+            </a>
+            {% endif %}
+          </div>
+        </div>
+
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="home-view-all-wrap">
+      <a href="{{ '/publications' | relative_url }}" class="home-view-all-link">
+        View all publications →
+      </a>
+    </div>
+  </section>
+  {% endif %}
 
 </div>
