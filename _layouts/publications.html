@@ -99,12 +99,14 @@ layout: default
             <!-- Title row: title + type badge -->
             <div class="pub-title-row">
               <h3 class="pub-title">{{ pub.title }}</h3>
-              {% assign badge_extra = '' %}
-              {% if pub.status == 'Accepted' %}{% assign badge_extra = 'status-accepted' %}{% endif %}
-              {% if pub.status == 'Under Review' %}{% assign badge_extra = 'status-review' %}{% endif %}
-              {% if pub.award %}{% assign badge_extra = 'has-award' %}{% endif %}
-              <span class="pub-type-badge {{ badge_extra }}">
-                {% if pub.award %}{{ pub.award }}{% else %}{{ pub.type }}{% if pub.status == 'Accepted' %} · Accepted{% endif %}{% endif %}
+              <span class="pub-type-badge{% if pub.award %} has-award{% endif %}">
+                {% if pub.award %}
+                  {{ pub.award }}
+                {% elsif pub.subtype %}
+                  {{ pub.type }} {{ pub.subtype }}
+                {% else %}
+                  {{ pub.type }}
+                {% endif %}
               </span>
             </div>
 

@@ -2,33 +2,14 @@
 # Publications Data
 # type: Conference | Journal | Workshop
 # status: Published | Accepted | Under Review
-# venue_short: abbreviated venue name shown on card (e.g. "IEEE VIS", "ACM CHI")
+# subtype: (optional) Paper | Poster | Extended Abstract
+# venue_short: abbreviated venue name shown on card (e.g. "Human Factors", "ACM AutomotiveUI")
 # tldr: 1-2 sentence summary shown on card
 # image: /assets/img/pub/FILENAME.jpg  — place files in assets/img/pub/
 # links: paper, poster, arxiv, code, demo (all optional)
 # award: (optional) award name
 # * = co-first author
 # ====================
-
-- title: "Adaptive Visual Scaffolding for Decision-Making: How Visualization Design Affects Confidence and Critical Thinking"
-  authors: "Ju, J., et al."
-  venue: "Proceedings of the 31st International Conference on Intelligent User Interfaces (IUI 2026), Paphos, Cyprus"
-  venue_short: "ACM IUI"
-  year: 2026
-  type: Conference
-  status: Accepted
-  tldr: "Adaptive visual scaffolding — adjusting visualization complexity based on user behavior — significantly improves decision quality and confidence, with the strongest benefit for intermediate-literacy users."
-  image: ""
-
-- title: "Visualization Literacy and Visual Attention: Eye-Tracking Evidence for Expertise-Dependent Fixation Patterns"
-  authors: "Ju, J., et al."
-  venue: "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS 2025), Vienna, Austria"
-  venue_short: "IEEE VIS"
-  year: 2025
-  type: Conference
-  status: Published
-  tldr: "Expert chart readers show more efficient scanning patterns and focus on data-dense regions, while novices fixate on titles and legends — differences robust across 20 chart types and 60 participants."
-  image: ""
 
 - title: "Visual complexity of head-up display in automobiles modulates attentional tunneling"
   authors: "Lee, J.*, Lee, N.*, Ju, J.*, Chae, J., Park, J., Ryu, H. S., & Cho, Y. S."
@@ -37,7 +18,7 @@
   year: 2024
   type: Journal
   status: Published
-  tldr: ""
+  tldr: "Increasing the visual complexity of automotive head-up displays amplifies attentional tunneling, impairing drivers' ability to detect peripheral hazards."
   image: ""
   links:
     paper: "https://doi.org/10.1177/00187208231181496"
@@ -48,8 +29,9 @@
   venue_short: "ACM AutomotiveUI"
   year: 2024
   type: Conference
+  subtype: Poster
   status: Published
-  tldr: ""
+  tldr: "Gradient boosting and random forest models outperform single classifiers in predicting user preferences for in-vehicle infotainment, enabling more accurate personalized recommendations."
   image: ""
   links:
     paper: "https://doi.org/10.1145/3641308.3685021"
@@ -61,7 +43,7 @@
   year: 2023
   type: Journal
   status: Published
-  tldr: ""
+  tldr: "Reward-associated stimuli capture attention more strongly when participants actively explore for reward information, suggesting exploration amplifies value-driven attentional capture."
   image: ""
   links:
     paper: "https://doi.org/10.1037/xlm0001189"
@@ -73,7 +55,7 @@
   year: 2023
   type: Journal
   status: Published
-  tldr: ""
+  tldr: "Computational simulation of associative learning models reveals that value-driven attentional capture is best explained by models incorporating prediction-error-based updating."
   image: ""
   links:
     paper: "https://doi.org/10.3758/s13423-023-02296-0"
