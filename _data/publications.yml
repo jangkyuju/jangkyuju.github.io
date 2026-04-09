@@ -2,43 +2,78 @@
 # Publications Data
 # type: Conference | Journal | Workshop
 # status: Published | Accepted | Under Review
-# links: paper, arxiv, code, demo (all optional)
+# venue_short: abbreviated venue name shown on card (e.g. "IEEE VIS", "ACM CHI")
+# tldr: 1-2 sentence summary shown on card
+# image: /assets/img/pub/FILENAME.jpg  — place files in assets/img/pub/
+# links: paper, poster, arxiv, code, demo (all optional)
 # award: (optional) award name
 # * = co-first author
 # ====================
 
+- title: "Adaptive Visual Scaffolding for Decision-Making: How Visualization Design Affects Confidence and Critical Thinking"
+  authors: "Ju, J., et al."
+  venue: "Proceedings of the 31st International Conference on Intelligent User Interfaces (IUI 2026), Paphos, Cyprus"
+  venue_short: "ACM IUI"
+  year: 2026
+  type: Conference
+  status: Accepted
+  tldr: "Adaptive visual scaffolding — adjusting visualization complexity based on user behavior — significantly improves decision quality and confidence, with the strongest benefit for intermediate-literacy users."
+  image: ""
+
+- title: "Visualization Literacy and Visual Attention: Eye-Tracking Evidence for Expertise-Dependent Fixation Patterns"
+  authors: "Ju, J., et al."
+  venue: "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS 2025), Vienna, Austria"
+  venue_short: "IEEE VIS"
+  year: 2025
+  type: Conference
+  status: Published
+  tldr: "Expert chart readers show more efficient scanning patterns and focus on data-dense regions, while novices fixate on titles and legends — differences robust across 20 chart types and 60 participants."
+  image: ""
+
 - title: "Visual complexity of head-up display in automobiles modulates attentional tunneling"
   authors: "Lee, J.*, Lee, N.*, Ju, J.*, Chae, J., Park, J., Ryu, H. S., & Cho, Y. S."
   venue: "Human Factors, 66(7), 1879-1892"
+  venue_short: "Human Factors"
   year: 2024
   type: Journal
   status: Published
+  tldr: ""
+  image: ""
   links:
     paper: "https://doi.org/10.1177/00187208231181496"
 
 - title: "Comparative analysis of ensemble machine learning models for personalized in-vehicle infotainment recommendation systems"
   authors: "Ju, J., Lee, E., & Park, S."
   venue: "Adjunct Proceedings of the 16th International Conference on Automotive User Interfaces and Interactive Vehicular Applications, 45-50"
+  venue_short: "ACM AutomotiveUI"
   year: 2024
   type: Conference
   status: Published
+  tldr: ""
+  image: ""
   links:
     paper: "https://doi.org/10.1145/3641308.3685021"
 
 - title: "The modulation of value-driven attentional capture by exploration for reward information"
   authors: "Ju, J., & Cho, Y. S."
   venue: "Journal of Experimental Psychology: Learning, Memory, and Cognition, 49(2), 181-197"
+  venue_short: "JEP: LMC"
   year: 2023
   type: Journal
   status: Published
+  tldr: ""
+  image: ""
   links:
     paper: "https://doi.org/10.1037/xlm0001189"
 
 - title: "Value-driven attention and associative learning models: a computational simulation analysis"
   authors: "Jeong, J. H., Ju, J., Kim, S., Choi, J. S., & Cho, Y. S."
   venue: "Psychonomic Bulletin & Review, 30(5), 1689-1706"
+  venue_short: "Psychonomic Bulletin & Review"
   year: 2023
   type: Journal
   status: Published
+  tldr: ""
+  image: ""
   links:
     paper: "https://doi.org/10.3758/s13423-023-02296-0"

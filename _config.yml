@@ -7,10 +7,10 @@ lang: en
 timezone: America/New_York
 
 title: Jangkyu Ju
-tagline: PhD Student @ Georgia Tech | Data Visualization & HCI
+tagline: Research Engineer & Data Scientist | Human-AI Interaction & HCI
 description: >-
-  PhD student in Data Visualization and Human-Computer Interaction at Georgia Tech.
-  Research interests: visualization literacy, eye-tracking, human-AI interaction.
+  Research Engineer & Data Scientist at Hyundai Motor Group.
+  Research interests: visualization literacy, eye-tracking, human-AI interaction, adaptive interfaces.
 
 # GitHub Pages URL — update before deploying
 # For username.github.io repo: url = "https://USERNAME.github.io", baseurl = ""

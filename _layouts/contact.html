@@ -83,8 +83,8 @@ layout: default
             </svg>
           </span>
           <div>
-            <div class="contact-item-label">Building</div>
-            <div class="contact-item-value">Klaus Advanced Computing Building</div>
+            <div class="contact-item-label">Organization</div>
+            <div class="contact-item-value">Hyundai Motor Group</div>
           </div>
         </div>
 
@@ -97,8 +97,8 @@ layout: default
             </svg>
           </span>
           <div>
-            <div class="contact-item-label">Address</div>
-            <div class="contact-item-value">266 Ferst Drive NW<br>Atlanta, GA 30332</div>
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-value">Seoul, South Korea</div>
           </div>
         </div>
 
@@ -110,35 +110,76 @@ layout: default
     <div class="contact-card contact-form">
       <h2>Send a Message</h2>
 
-      <form action="#" method="post" onsubmit="alert('This is a static site. Please send an email directly.'); return false;">
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
         <div class="form-group">
           <label class="form-label" for="contact-name">Name</label>
-          <input class="form-input" type="text" id="contact-name" name="name" placeholder="Your name">
+          <input class="form-input" type="text" id="contact-name" name="name"
+                 placeholder="Your name" required autocomplete="name">
         </div>
 
         <div class="form-group">
           <label class="form-label" for="contact-email">Email</label>
-          <input class="form-input" type="email" id="contact-email" name="email" placeholder="your.email@example.com">
+          <input class="form-input" type="email" id="contact-email" name="email"
+                 placeholder="your.email@example.com" required autocomplete="email">
         </div>
 
         <div class="form-group">
           <label class="form-label" for="contact-subject">Subject</label>
-          <input class="form-input" type="text" id="contact-subject" name="subject" placeholder="What's this about?">
+          <input class="form-input" type="text" id="contact-subject" name="subject"
+                 placeholder="What's this about?" required>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="contact-message">Message</label>
           <textarea class="form-input form-textarea" id="contact-message" name="message"
-                    rows="6" placeholder="Your message..."></textarea>
+                    rows="6" placeholder="Your message..." required></textarea>
         </div>
 
-        <button type="submit" class="form-submit">Send Message</button>
+        <button type="submit" class="form-submit" id="form-submit-btn">Send Message</button>
+
+        <p id="form-status" style="margin-top:0.75rem;font-size:0.875rem;display:none;"></p>
 
       </form>
 
+      <script>
+        (function() {
+          var form = document.getElementById('contact-form');
+          var status = document.getElementById('form-status');
+          var btn = document.getElementById('form-submit-btn');
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            }).then(function(res) {
+              if (res.ok) {
+                status.style.color = '#16a34a';
+                status.textContent = 'Message sent! I\'ll get back to you soon.';
+                form.reset();
+              } else {
+                status.style.color = '#dc2626';
+                status.textContent = 'Oops — something went wrong. Please email directly.';
+              }
+              status.style.display = 'block';
+              btn.disabled = false;
+              btn.textContent = 'Send Message';
+            }).catch(function() {
+              status.style.color = '#dc2626';
+              status.textContent = 'Network error. Please email directly.';
+              status.style.display = 'block';
+              btn.disabled = false;
+              btn.textContent = 'Send Message';
+            });
+          });
+        })();
+      </script>
+
       <p class="form-note">
-        Note: This is a static site. For reliable delivery, please email directly at
+        Or email directly at
         <a href="mailto:{{ site.data.profile.email }}" class="text-link">{{ site.data.profile.email }}</a>.
       </p>
 
