@@ -12,7 +12,23 @@
    Custom Design Tokens — from Figma theme.css
    ============================================================ */
 
+@font-face {
+  font-family: "Pretendard";
+  src:
+    local("Pretendard"),
+    local("Pretendard Variable"),
+    local("PretendardVariable"),
+    url("../fonts/PretendardVariable.ttf") format("truetype");
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  --custom-font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --bs-font-sans-serif: var(--custom-font-sans);
+  --bs-body-font-family: var(--custom-font-sans);
+  --font-family-base: var(--custom-font-sans);
   --custom-primary: #1e3a8a;
   --custom-primary-fg: #ffffff;
   --custom-secondary: #fbbf24;
@@ -62,6 +78,35 @@ html[data-mode="dark"] {
 body {
   background-color: var(--custom-bg);
   font-size: 16px;
+  font-family: var(--custom-font-sans) !important;
+  letter-spacing: 0;
+}
+
+html,
+body,
+#main-wrapper,
+.main-content-wrapper,
+.page-container,
+.site-topbar,
+.site-footer {
+  font-family: var(--custom-font-sans) !important;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: var(--custom-font-sans) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--custom-font-sans) !important;
+  letter-spacing: 0;
 }
 
 /* ============================================================
