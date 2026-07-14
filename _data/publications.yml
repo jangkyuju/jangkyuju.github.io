@@ -2,7 +2,11 @@
 # Publications Data
 # type: Conference | Journal | Workshop
 # status: Published | Accepted | Under Review
-# links: paper, arxiv, code, demo (all optional)
+# subtype: (optional) Paper | Poster | Extended Abstract
+# venue_short: abbreviated venue name shown on card (e.g. "Human Factors", "ACM AutomotiveUI")
+# tldr: 1-2 sentence summary shown on card
+# image: /assets/img/pub/FILENAME.jpg  - place files in assets/img/pub/
+# links: paper, poster, arxiv, code, demo (all optional)
 # award: (optional) award name
 # * = co-first author
 # ====================
@@ -10,35 +14,96 @@
 - title: "Visual complexity of head-up display in automobiles modulates attentional tunneling"
   authors: "Lee, J.*, Lee, N.*, Ju, J.*, Chae, J., Park, J., Ryu, H. S., & Cho, Y. S."
   venue: "Human Factors, 66(7), 1879-1892"
+  venue_short: "Human Factors"
   year: 2024
   type: Journal
   status: Published
+  featured: true
+  citations: 0
+  tldr: "Increasing the visual complexity of automotive head-up displays amplifies attentional tunneling, impairing drivers' ability to detect peripheral hazards."
+  image: ""
   links:
     paper: "https://doi.org/10.1177/00187208231181496"
+  bibtex: |
+    @article{lee2024visual,
+      title     = {Visual complexity of head-up display in automobiles modulates attentional tunneling},
+      author    = {Lee, J. and Lee, N. and Ju, J. and Chae, J. and Park, J. and Ryu, H. S. and Cho, Y. S.},
+      journal   = {Human Factors},
+      volume    = {66},
+      number    = {7},
+      pages     = {1879--1892},
+      year      = {2024},
+      doi       = {10.1177/00187208231181496}
+    }
 
 - title: "Comparative analysis of ensemble machine learning models for personalized in-vehicle infotainment recommendation systems"
   authors: "Ju, J., Lee, E., & Park, S."
   venue: "Adjunct Proceedings of the 16th International Conference on Automotive User Interfaces and Interactive Vehicular Applications, 45-50"
+  venue_short: "ACM AutomotiveUI"
   year: 2024
   type: Conference
+  subtype: Poster
   status: Published
+  citations: 0
+  tldr: "Gradient boosting and random forest models outperform single classifiers in predicting user preferences for in-vehicle infotainment, enabling more accurate personalized recommendations."
+  image: ""
   links:
     paper: "https://doi.org/10.1145/3641308.3685021"
+  bibtex: |
+    @inproceedings{ju2024comparative,
+      title     = {Comparative analysis of ensemble machine learning models for personalized in-vehicle infotainment recommendation systems},
+      author    = {Ju, J. and Lee, E. and Park, S.},
+      booktitle = {Adjunct Proceedings of the 16th International Conference on Automotive User Interfaces and Interactive Vehicular Applications},
+      pages     = {45--50},
+      year      = {2024},
+      doi       = {10.1145/3641308.3685021}
+    }
 
 - title: "The modulation of value-driven attentional capture by exploration for reward information"
   authors: "Ju, J., & Cho, Y. S."
   venue: "Journal of Experimental Psychology: Learning, Memory, and Cognition, 49(2), 181-197"
+  venue_short: "JEP: LMC"
   year: 2023
   type: Journal
   status: Published
+  featured: true
+  citations: 5
+  tldr: "Reward-associated stimuli capture attention more strongly when participants actively explore for reward information, suggesting exploration amplifies value-driven attentional capture."
+  image: ""
   links:
     paper: "https://doi.org/10.1037/xlm0001189"
+  bibtex: |
+    @article{ju2023modulation,
+      title     = {The modulation of value-driven attentional capture by exploration for reward information},
+      author    = {Ju, J. and Cho, Y. S.},
+      journal   = {Journal of Experimental Psychology: Learning, Memory, and Cognition},
+      volume    = {49},
+      number    = {2},
+      pages     = {181--197},
+      year      = {2023},
+      doi       = {10.1037/xlm0001189}
+    }
 
 - title: "Value-driven attention and associative learning models: a computational simulation analysis"
   authors: "Jeong, J. H., Ju, J., Kim, S., Choi, J. S., & Cho, Y. S."
   venue: "Psychonomic Bulletin & Review, 30(5), 1689-1706"
+  venue_short: "Psychonomic Bulletin & Review"
   year: 2023
   type: Journal
   status: Published
+  citations: 8
+  tldr: "Computational simulation of associative learning models reveals that value-driven attentional capture is best explained by models incorporating prediction-error-based updating."
+  image: ""
   links:
     paper: "https://doi.org/10.3758/s13423-023-02296-0"
+  bibtex: |
+    @article{jeong2023value,
+      title     = {Value-driven attention and associative learning models: a computational simulation analysis},
+      author    = {Jeong, J. H. and Ju, J. and Kim, S. and Choi, J. S. and Cho, Y. S.},
+      journal   = {Psychonomic Bulletin \& Review},
+      volume    = {30},
+      number    = {5},
+      pages     = {1689--1706},
+      year      = {2023},
+      doi       = {10.3758/s13423-023-02296-0}
+    }

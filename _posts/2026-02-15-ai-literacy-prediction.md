@@ -1,8 +1,10 @@
 ---
+layout: blog-doc
 title: "AI-Based Literacy Score Prediction Model Launch"
 date: 2026-02-15 00:00:00 +0000
 categories: [News]
 tags: [Machine Learning, Visualization Literacy, Tool]
+published: false
 ---
 
 I'm excited to announce the launch of our AI-based visualization literacy assessment tool! This project has been in development for the past year, combining insights from cognitive science, machine learning, and visualization research.

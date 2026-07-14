@@ -1,8 +1,10 @@
 ---
+layout: blog-doc
 title: "Getting Started with Eye-Tracking Research in HCI"
 date: 2025-07-05 00:00:00 +0000
 categories: [Tutorial]
 tags: [Tutorial, Eye-tracking, Methods]
+published: false
 ---
 
 Eye-tracking is a powerful methodology for understanding how people visually process information. This guide covers the essentials for HCI and visualization researchers looking to incorporate it into their studies.

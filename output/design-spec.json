@@ -53,7 +53,7 @@
     },
     "spacing": {
       "border_radius": "0.625rem",
-      "max_width_container": "64rem (max-w-5xl)",
+      "max_width_container": "76.8rem (20% wider than the original 64rem)",
       "container_padding": "1rem 1.5rem 2rem",
       "section_gap": "3rem (mb-12)"
     },
@@ -63,7 +63,6 @@
       "nav_items": [
         { "label": "Home", "path": "/" },
         { "label": "Publications", "path": "/publications" },
-        { "label": "Blog", "path": "/blog" },
         { "label": "Look who's here", "path": "/analytics" },
         { "label": "Contact", "path": "/contact" }
       ],
@@ -94,8 +93,9 @@
         "grid": "md:grid-cols-2 gap-6",
         "news": {
           "title": "News",
-          "items": "date (Calendar icon) + content text + optional 'Read more →' link",
-          "style": "card with border"
+          "items": "date (Calendar icon) + content text",
+          "visible_limit": 5,
+          "style": "single vertically scrollable list with row dividers; no enclosing card"
         },
         "recent_posts": {
           "title": "Recent Posts",
@@ -125,6 +125,7 @@
       }
     },
     "blog": {
+      "published": false,
       "layout": "chirpy_default",
       "source_files": ["app/pages/Blog.tsx", "app/pages/BlogPost.tsx"],
       "categories": ["Research", "Tutorial", "News", "Reflection"],

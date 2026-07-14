@@ -144,7 +144,7 @@ layout: default
           {% endif %}
           <em>{{ pub.venue }}</em>.
           {% if pub.award %}
-          <span class="cv-award-badge">🏆 {{ pub.award }}</span>
+          <span class="cv-award-badge">Award: {{ pub.award }}</span>
           {% endif %}
         </p>
       </li>
@@ -166,7 +166,7 @@ layout: default
           {{ pres.title }}.
           <em>{{ pres.type }} presented at {{ pres.event }}</em>, {{ pres.location }}.
           {% if pres.award %}
-          <span class="cv-award-badge">🏆 {{ pres.award }}</span>
+          <span class="cv-award-badge">Award: {{ pres.award }}</span>
           {% endif %}
         </p>
       </li>

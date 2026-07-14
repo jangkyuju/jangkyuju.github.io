@@ -1,8 +1,10 @@
 ---
+layout: blog-doc
 title: "Summer at Tableau Research: Reflections and Learnings"
 date: 2025-08-25 00:00:00 +0000
 categories: [Reflection]
 tags: [Internship, Industry Research, Career]
+published: false
 ---
 
 Reflecting on an incredible summer internship at **Tableau Research @ Salesforce**. Working with Srishti Palani and Arjun Srinivasan opened my eyes to the intersection of academic rigor and product-driven research.

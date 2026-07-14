@@ -4,18 +4,18 @@
 # links: demo, code, report, paper (all optional)
 # ====================
 
-# ── Hyundai Motor Group ──────────────────────────────────────────
+# -- Hyundai Motor Group ------------------------------------------------------
 
 - title: "IVI Data Collection Architecture & Pipeline Development"
   organization: "Hyundai Motor Group"
-  role: "Research Engineer — Lead, Schema Design & Pipeline Coordination"
-  period: "Dec 2024 – Jun 2025"
+  role: "Research Engineer - Lead, Schema Design & Pipeline Coordination"
+  period: "Dec 2024 - Jun 2025"
   status: Ongoing
   description: >
     Redesigned the data collection system for Android Automotive OS-based IVI platforms.
     Led schema standardization and modular API design, coordinating development across
     IVI unit, logging middleware, and cloud-side pipeline (vDSP). Built a complete data
-    flow architecture: App → JSON Logging → Vehicle Service → Corporate Server → BI Tools.
+    flow architecture: App -> JSON Logging -> Vehicle Service -> Corporate Server -> BI Tools.
     Deployed in production Connect IVI units; created 40+ top-level categories with
     modular extensibility, cutting manual schema update workload by 50%.
   tags:
@@ -27,8 +27,8 @@
 
 - title: "Personalized IVI Recommendation Systems"
   organization: "Hyundai Motor Group"
-  role: "Research Engineer — First Author, Model Selection & Evaluation Lead"
-  period: "Feb 2024 – Jul 2024"
+  role: "Research Engineer - First Author, Model Selection & Evaluation Lead"
+  period: "Feb 2024 - Jul 2024"
   status: Completed
   description: >
     Developed a context-aware, personalized recommendation system for in-vehicle
@@ -47,8 +47,8 @@
 
 - title: "Automated VoC Sensing & Workflow Automation for IVI Feedback Analysis"
   organization: "Hyundai Motor Group"
-  role: "Research Engineer — ETL Pipeline Design & Dashboard Development"
-  period: "Mar 2024 – May 2024"
+  role: "Research Engineer - ETL Pipeline Design & Dashboard Development"
+  period: "Mar 2024 - May 2024"
   status: Completed
   description: >
     Automated the end-to-end Voice-of-Customer (VoC) analysis pipeline for IVI user
@@ -65,8 +65,8 @@
 
 - title: "Global IVI User Behavior Analysis & KPI Development"
   organization: "Hyundai Motor Group"
-  role: "Research Engineer — Data Analyst"
-  period: "2023 – Present"
+  role: "Research Engineer - Data Analyst"
+  period: "2023 - Present"
   status: Ongoing
   description: >
     Ongoing analysis of in-vehicle infotainment usage across global markets (Korea,
@@ -83,8 +83,8 @@
 
 - title: "Integrated Metrics Monitoring Dashboard"
   organization: "Hyundai Motor Group"
-  role: "Research Engineer — Dashboard Design & Visualization"
-  period: "2023 – 2024"
+  role: "Research Engineer - Dashboard Design & Visualization"
+  period: "2023 - 2024"
   status: Completed
   description: >
     Designed and built a unified monitoring dashboard for the AVP center's key
@@ -97,12 +97,12 @@
     - Data Visualization
     - KPI Design
 
-# ── Korea University (M.S. Research) ─────────────────────────────
+# -- Korea University (M.S. Research) ----------------------------------------
 
 - title: "Reward Uncertainty & Information Entropy in Visual Attention (M.S. Research)"
   organization: "Korea University, School of Psychology"
-  role: "First Author — Experiment Design, Data Collection, Statistical Analysis"
-  period: "Mar 2021 – Feb 2023"
+  role: "First Author - Experiment Design, Data Collection, Statistical Analysis"
+  period: "Mar 2021 - Feb 2023"
   status: Completed
   description: >
     Investigated whether information entropy or reward variance is the primary driver
@@ -122,8 +122,8 @@
 
 - title: "HUD Visual Complexity & Attentional Allocation in Driving"
   organization: "Korea University, School of Psychology"
-  role: "Co-first Author — Experiment Design, Dual-Task Setup, Data Analysis"
-  period: "Mar 2021 – Aug 2021"
+  role: "Co-first Author - Experiment Design, Dual-Task Setup, Data Analysis"
+  period: "Mar 2021 - Aug 2021"
   status: Completed
   description: >
     Examined how varying levels of HUD visual complexity (5 levels) affect drivers'
@@ -144,13 +144,13 @@
 
 - title: "Computational Modeling of Value-Driven Attentional Capture"
   organization: "Korea University, School of Psychology"
-  role: "Co-Author — Model Implementation, Parameter Fitting, Performance Analysis"
-  period: "Mar 2020 – Aug 2020"
+  role: "Co-Author - Model Implementation, Parameter Fitting, Performance Analysis"
+  period: "Mar 2020 - Aug 2020"
   status: Completed
   description: >
     Implemented and compared four associative learning models (Rescorla-Wagner,
     Mackintosh, SPH, Esber-Haselgrove) to explain value-driven attentional capture.
-    Used BIC for model comparison. SPH-V and EH-α models best captured phenomena
+    Used BIC for model comparison. SPH-V and EH-alpha models best captured phenomena
     including uncertainty, switching inertia, and extinction resistance. Established
     a model-based foundation for understanding attention mechanisms applicable to
     adaptive interface design. Published in Psychonomic Bulletin & Review (2023).

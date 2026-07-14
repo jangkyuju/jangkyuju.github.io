@@ -6,7 +6,7 @@ experience:
   - organization: "Hyundai Motor Group"
     role: "Research Engineer / Data Scientist"
     team: "Data Insight Team, ICT Division"
-    period: "2025 – Present"
+    period: "2025 - Present"
     location: "Seoul, South Korea"
     highlights:
       - "Large-scale cross-domain data analysis (e.g., vehicle log, customer, sales, production), metrics development and dashboard visualization"
@@ -15,7 +15,7 @@ experience:
   - organization: "Hyundai Motor Group"
     role: "Research Engineer"
     team: "Infotainment Development Center, R&D Division"
-    period: "2023 – 2025"
+    period: "2023 - 2025"
     location: "Seoul, South Korea"
     highlights:
       - "Large-scale in-vehicle infotainment (IVI) data analysis for modeling interaction behavior"
@@ -26,7 +26,7 @@ experience:
   - organization: "Korea University, School of Psychology"
     role: "Graduate Researcher"
     team: "Human Performance Lab"
-    period: "2021 – 2023"
+    period: "2021 - 2023"
     location: "Seoul, South Korea"
     highlights:
       - "Visual complexity of automotive head-up displays and attentional tunneling in driving (in collab. with Cognitive Systems Lab, Korea University, PI: Prof. Christian Wallraven)"
@@ -42,7 +42,7 @@ experience:
       - "Behavioral experiments (key-press, mouse-tracking, neuro-imaging)"
       - "Statistical analysis and ML"
 
-  - organization: "L'Oréal Korea"
+  - organization: "L'Oreal Korea"
     role: "Data Analyst Intern"
     team: "Human Resources"
     period: "2019"
@@ -54,9 +54,9 @@ education:
   - degree: "M.S. in Behavioral and Cognitive Neuroscience"
     institution: "Korea University"
     department: "School of Psychology"
-    period: "2021 – 2023"
+    period: "2021 - 2023"
     location: "Seoul, South Korea"
-    note: "GPA: 4.5/4.5 · Advisor: Dr. Yang-Seok Cho"
+    note: "GPA: 4.5/4.5 - Advisor: Dr. Yang-Seok Cho"
 
   - degree: "Exchange Student"
     institution: "University of Toronto"
@@ -67,7 +67,7 @@ education:
   - degree: "B.A. in Psychology, Business Administration"
     institution: "Korea University"
     department: "Double Major"
-    period: "2015 – 2021"
+    period: "2015 - 2021"
     location: "Seoul, South Korea"
     note: "GPA: 4.09/4.5"
 
@@ -123,7 +123,7 @@ presentations:
     year: "2021"
 
 awards:
-  - year: "2021 – 2023"
+  - year: "2021 - 2023"
     title: "Scholarship for Graduate Researcher"
     organization: "Brain Korea 21, Ministry of Education, Korea"
 
@@ -143,11 +143,11 @@ awards:
     title: "Academic Excellence Award"
     organization: "Korea University"
 
-  - year: "2018 – 2020"
+  - year: "2018 - 2020"
     title: "Family Scholarship"
     organization: "Korea University"
 
-  - year: "2018 – 2020"
+  - year: "2018 - 2020"
     title: "Semester High Honors"
     organization: "Korea University"
 

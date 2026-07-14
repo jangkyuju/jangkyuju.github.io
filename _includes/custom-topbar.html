@@ -10,10 +10,8 @@
          class="{% if page.url contains '/publications' %}active{% endif %}">Publications</a>
       <a href="{{ '/projects' | relative_url }}"
          class="{% if page.url contains '/projects' %}active{% endif %}">Projects</a>
-      <a href="{{ '/blog' | relative_url }}"
-         class="{% if page.url contains '/blog' or page.url contains '/posts' or page.url contains '/categories' or page.url contains '/tags' %}active{% endif %}">Blog</a>
       <a href="{{ '/analytics' | relative_url }}"
-         class="{% if page.url contains '/analytics' %}active{% endif %}">Look who's here</a>
+         class="{% if page.url contains '/analytics' %}active{% endif %}">Analytics</a>
       <a href="{{ '/cv' | relative_url }}"
          class="{% if page.url contains '/cv' %}active{% endif %}">CV</a>
       <a href="{{ '/contact' | relative_url }}"
@@ -23,8 +21,42 @@
     <!-- Right actions -->
     <div class="topbar-actions">
 
+      <!-- CV Download button -->
+      {% if site.data.profile.cv_pdf %}
+      <a href="{{ site.data.profile.cv_pdf }}" target="_blank" rel="noopener noreferrer"
+         class="btn-cv topbar-cv-btn" aria-label="Download CV">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        <span class="topbar-cv-label">CV</span>
+      </a>
+      {% endif %}
+
+      <!-- Dark mode toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+
       <!-- Mobile hamburger -->
-      <button class="topbar-mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu">
+      <button class="topbar-mobile-toggle" id="mobile-toggle" aria-label="Open navigation menu"
+              aria-controls="topbar-nav" aria-expanded="false">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -38,10 +70,54 @@
   </div>
 </nav>
 
-<!-- Mobile nav JS -->
+<!-- Theme + Mobile nav JS -->
 <script>
-  document.getElementById('mobile-toggle').addEventListener('click', function() {
+  // Dark mode
+  (function() {
+    var html = document.documentElement;
+    var btn = document.getElementById('theme-toggle');
+    var saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.setAttribute('data-mode', 'dark');
+    }
+    function update() {
+      var isDark = html.getAttribute('data-mode') === 'dark';
+      btn.querySelector('.icon-sun').style.display = isDark ? 'none' : '';
+      btn.querySelector('.icon-moon').style.display = isDark ? '' : 'none';
+    }
+    update();
+    btn.addEventListener('click', function() {
+      var isDark = html.getAttribute('data-mode') === 'dark';
+      html.setAttribute('data-mode', isDark ? '' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      update();
+    });
+  })();
+
+  // Mobile nav
+  (function() {
+    var toggle = document.getElementById('mobile-toggle');
     var nav = document.getElementById('topbar-nav');
-    nav.classList.toggle('open');
-  });
+
+    function setOpen(isOpen) {
+      nav.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    }
+
+    toggle.addEventListener('click', function() {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    nav.addEventListener('click', function(event) {
+      if (event.target.closest('a')) setOpen(false);
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+  })();
 </script>

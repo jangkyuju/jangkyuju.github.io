@@ -4,36 +4,38 @@ theme: jekyll-theme-chirpy
 # Site Settings
 # ====================
 lang: en
-timezone: America/New_York
+timezone: Asia/Seoul
 
 title: Jangkyu Ju
-tagline: PhD Student @ Georgia Tech | Data Visualization & HCI
+tagline: Research Engineer & Data Scientist | Human-AI Interaction & HCI
 description: >-
-  PhD student in Data Visualization and Human-Computer Interaction at Georgia Tech.
-  Research interests: visualization literacy, eye-tracking, human-AI interaction.
+  Research Engineer & Data Scientist at Hyundai Motor Group.
+  Working across human-AI interaction, visual cognition, user behavior analytics,
+  adaptive interfaces, and automotive UX.
 
-# GitHub Pages URL — update before deploying
+# GitHub Pages URL - update before deploying
 # For username.github.io repo: url = "https://USERNAME.github.io", baseurl = ""
 # For project repo: url = "https://USERNAME.github.io", baseurl = "/REPO-NAME"
-url: "https://jkju-cs.github.io"
+url: "https://jangkyuju.github.io"
 baseurl: ""
 
 # ====================
 # Social / Profile
 # ====================
 github:
-  username: jkju-cs
+  username: jangkyuju
 
 social:
   name: Jangkyu Ju
   email: ju.jk.psych@gmail.com
   links:
     - https://www.linkedin.com/in/jangkyu-ju-99666724a/
-    - https://github.com/jkju-cs
+    - https://github.com/jangkyuju
     - https://scholar.google.com/citations?user=qA_-6TQAAAAJ
 
-# Profile avatar (used in head meta)
-avatar: /assets/img/profile.jpg
+# Add a real image path when a profile photo is available.
+avatar:
+social_preview_image: /assets/img/social-preview.png
 
 # ====================
 # Theme Settings
@@ -41,7 +43,7 @@ avatar: /assets/img/profile.jpg
 # light | dark | (leave empty = auto)
 theme_mode:
 
-# Sidebar (Chirpy default) — we override with top navbar in _layouts/default.html
+# Sidebar (Chirpy default) - we override with top navbar in _layouts/default.html
 # Keep these for SEO / meta purposes
 icon:
 
@@ -101,7 +103,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: post
+      layout: blog-doc
       comments: false
       toc: true
       math: false
@@ -152,3 +154,4 @@ exclude:
   - .claude
   - vendor
   - node_modules
+  - SUMMARY.md

@@ -4,16 +4,17 @@
 # ====================
 
 name: Jangkyu Ju
-tagline: "Research Engineer · Data Scientist · AI Engineer"
+tagline: "Research Engineer - Data Scientist - AI Engineer"
 title: Research Engineer & Data Scientist
 lab: Infotainment Planning Team
 university: Hyundai Motor Group
 email: ju.jk.psych@gmail.com
+avatar: ""
 
 # Social links
 google_scholar: "https://scholar.google.com/citations?user=qA_-6TQAAAAJ&hl=en"
 linkedin: "https://www.linkedin.com/in/jangkyu-ju-99666724a/"
-github: "https://github.com/jkju-cs"
+github: "https://github.com/jangkyuju"
 cv_pdf: "https://drive.google.com/file/d/1GTcXFu7hCGWysBTTHcypUHELxeH-0O3x/view"
 
 # Bio paragraphs (supports HTML)
@@ -27,7 +28,7 @@ bio:
   - >
     My work sits at the intersection of <strong>Cognitive Science</strong>,
     <strong>Human-Computer Interaction</strong>, and <strong>Artificial Intelligence</strong>.
-    I study how information presentation shapes human cognition, judgment, and action —
+    I study how information presentation shapes human cognition, judgment, and action -
     and build intelligent systems that align with how people actually perceive and process information.
 
 # Research interests (pill badges on home page)

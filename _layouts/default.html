@@ -1,8 +1,10 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en' }}" data-mode="">
-<head>
-  {% include head.html %}
-</head>
+<!doctype html>
+
+{% include origin-type.html %}
+{% include lang.html %}
+
+<html lang="{{ page.lang | default: site.alt_lang | default: site.lang | default: 'en' }}" data-mode="">
+{% include head.html %}
 <body>
 
   {% include custom-topbar.html %}
@@ -12,11 +14,6 @@
   </div>
 
   {% include custom-footer.html %}
-
-  <!-- Chirpy post JS for TOC, copy buttons, etc. -->
-  {% if page.layout == 'post' %}
-  <script defer src="{{ '/assets/js/dist/post.min.js' | relative_url }}"></script>
-  {% endif %}
 
 </body>
 </html>
