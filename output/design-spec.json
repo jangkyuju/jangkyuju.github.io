@@ -93,7 +93,7 @@
         "grid": "md:grid-cols-2 gap-6",
         "news": {
           "title": "News",
-          "items": "date (Calendar icon) + content text",
+          "items": "month/year (Calendar icon) + content text, vertically centered per row",
           "visible_limit": 5,
           "style": "single vertically scrollable list with row dividers; no enclosing card"
         },
@@ -108,20 +108,15 @@
     "publications": {
       "layout": "publications",
       "source_file": "app/pages/Publications.tsx",
-      "sections": ["stats_cards", "publications_by_year", "peer_review_service"],
-      "stats_cards": {
-        "grid": "grid-cols-2 md:grid-cols-4",
-        "cards": ["Total Papers (count)", "Conference (count)", "Journal (count)", "Awards (count)"],
-        "style": "card with large bold primary-color number + label"
-      },
+      "sections": ["publications_by_year", "posters"],
       "publications_by_year": {
         "sort": "descending by year",
         "year_header": "Calendar icon + year h2",
         "publication_fields": ["type badge (Conference|Journal|Workshop)", "status badge (Published|Accepted|Under Review)", "award badge (amber)", "title (h3 xl)", "authors (gray small)", "venue (italic gray)", "link buttons (PDF=primary filled, arXiv|Code=outlined, Demo=amber)"]
       },
-      "peer_review_service": {
-        "venues": ["IEEE VIS", "CHI", "ACM IUI", "IEEE TVCG"],
-        "style": "badge list flex-wrap"
+      "posters": {
+        "source": "CV presentations filtered by type=Poster",
+        "style": "unframed year, title, authors, event, and location rows with dividers"
       }
     },
     "blog": {

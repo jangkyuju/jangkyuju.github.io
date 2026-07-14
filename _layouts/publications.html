@@ -7,9 +7,9 @@ layout: default
   <!-- Header -->
   <div class="pub-page-header">
     <h1 class="page-title">Publications</h1>
-    <p>Research papers and articles on data visualization, human-computer interaction, and cognitive science.</p>
-    <p style="margin-top:0.75rem; color: var(--custom-muted-fg);">
-      Full list also on my
+    <p>
+      Below are my published research papers from peer-reviewed journals and conferences.
+      For a complete list, please visit my
       <a href="{{ site.data.profile.google_scholar }}" target="_blank" rel="noopener noreferrer"
          class="text-link" style="display:inline-flex;align-items:center;gap:0.25rem;">
         Google Scholar profile
@@ -19,38 +19,8 @@ layout: default
           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
           <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
         </svg>
-      </a>
+      </a>.
     </p>
-  </div>
-
-  <!-- Stats Cards -->
-  {% assign total = site.data.publications | size %}
-  {% assign conf_count = 0 %}
-  {% assign journal_count = 0 %}
-  {% assign award_count = 0 %}
-  {% for pub in site.data.publications %}
-    {% if pub.type == 'Conference' %}{% assign conf_count = conf_count | plus: 1 %}{% endif %}
-    {% if pub.type == 'Journal' %}{% assign journal_count = journal_count | plus: 1 %}{% endif %}
-    {% if pub.award %}{% assign award_count = award_count | plus: 1 %}{% endif %}
-  {% endfor %}
-
-  <div class="pub-stats-grid">
-    <div class="stat-card">
-      <span class="stat-number">{{ total }}</span>
-      <span class="stat-label">Total Papers</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-number">{{ conf_count }}</span>
-      <span class="stat-label">Conference</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-number">{{ journal_count }}</span>
-      <span class="stat-label">Journal</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-number" style="color: var(--custom-secondary);">{{ award_count }}</span>
-      <span class="stat-label">Awards</span>
-    </div>
   </div>
 
   <!-- Publications by Year -->
@@ -254,17 +224,25 @@ layout: default
   }
   </script>
 
-  <!-- Peer Review Service -->
-  <div class="peer-review-section">
-    <h2>Peer Review Service</h2>
-    <p style="color: var(--custom-muted-fg); margin-bottom: 1rem;">
-      I serve as a reviewer for the following conferences and journals:
-    </p>
-    <div class="venue-badges">
-      {% for venue in site.data.profile.peer_review_venues %}
-        <span class="venue-badge">{{ venue }}</span>
+  {% assign posters = site.data.cv.presentations | where: "type", "Poster" %}
+  {% if posters.size > 0 %}
+  <section class="posters-section" aria-labelledby="posters-heading">
+    <h2 id="posters-heading">Posters</h2>
+    <ol class="poster-list">
+      {% for poster in posters %}
+      <li class="poster-item">
+        <span class="poster-year">{{ poster.year }}</span>
+        <div class="poster-content">
+          <h3>{{ poster.title }}</h3>
+          <p class="poster-authors">{{ poster.authors }}</p>
+          <p class="poster-venue">
+            {{ poster.event }}{% if poster.location and poster.location != "" %} - {{ poster.location }}{% endif %}
+          </p>
+        </div>
+      </li>
       {% endfor %}
-    </div>
-  </div>
+    </ol>
+  </section>
+  {% endif %}
 
 </div>

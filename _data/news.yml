@@ -1,42 +1,54 @@
 # News items are displayed in this order on the homepage.
 # Entries are based on the site CV or details provided directly by the site owner.
 
-- date: "Jul 20, 2026"
+- date: "Jul 2026"
   content: >
     My role at Hyundai Motor Group concludes on July 20, 2026, before I begin the next stage of my academic career.
 
-- date: "2026"
+- date: "Apr 2026"
   content: >
     I accepted an offer of admission to the Ph.D. program at the Georgia Institute of Technology (Georgia Tech).
 
-- date: "2024"
+- date: "Sep 2024"
   content: >
     Our paper on ensemble machine-learning models for personalized in-vehicle infotainment recommendation systems was published in the ACM AutomotiveUI 2024 Adjunct Proceedings.
 
-- date: "2024"
-  content: >
-    Our article on how automotive head-up display complexity modulates attentional tunneling was published in Human Factors.
-
-- date: "2024"
+- date: "Sep 2024"
   content: >
     I presented our personalized in-vehicle infotainment recommendation research at ACM AutomotiveUI 2024 in Stanford, California.
 
-- date: "2023"
+- date: "Jul 2024"
   content: >
-    I earned my M.S. in Behavioral and Cognitive Neuroscience from Korea University and joined Hyundai Motor Group as a Research Engineer.
+    Our article on how automotive head-up display complexity modulates attentional tunneling was published in Human Factors.
 
-- date: "2023"
-  content: >
-    Our article on exploration for reward information and value-driven attentional capture was published in the Journal of Experimental Psychology: Learning, Memory, and Cognition.
-
-- date: "2023"
+- date: "Oct 2023"
   content: >
     Our computational simulation analysis of value-driven attention and associative learning models was published in Psychonomic Bulletin & Review.
 
-- date: "2022"
+- date: "Feb 2023"
   content: >
-    I presented research at the Psychonomic Society, AHFE, and the Korean Society of Cognitive and Biological Psychology; our head-up display study received an Outstanding Presentation Award.
+    I earned my M.S. in Behavioral and Cognitive Neuroscience from Korea University and joined Hyundai Motor Group as a Research Engineer.
 
-- date: "2021"
+- date: "Feb 2023"
   content: >
-    I presented research on reward information and value-driven attentional capture at the Psychonomic Society and the Korean Society of Cognitive and Biological Psychology.
+    Our article on exploration for reward information and value-driven attentional capture was published in the Journal of Experimental Psychology: Learning, Memory, and Cognition.
+
+- date: "Nov 2022"
+  content: >
+    I presented research on reward predictiveness and uncertainty at the 63rd Annual Meeting of the Psychonomic Society in Boston.
+
+- date: "Jul 2022"
+  content: >
+    I presented our research on automotive head-up display complexity and attentional tunneling at AHFE 2022.
+
+- date: "Feb 2022"
+  content: >
+    I presented two studies at the Korean Society of Cognitive and Biological Psychology; our head-up display study received an Outstanding Presentation Award.
+
+- date: "Nov 2021"
+  content: >
+    I presented research on reward information and value-driven attentional capture at the 62nd Annual Meeting of the Psychonomic Society.
+
+- date: "Feb 2021"
+  content: >
+    I presented research on reward information entropy and variance at the Korean Society of Cognitive and Biological Psychology.

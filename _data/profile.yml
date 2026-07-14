@@ -37,10 +37,9 @@ research_interests:
   - Visual Attention & Cognition
   - User Behavior Analytics
   - Adaptive Interfaces
-  - IVI / Automotive UX
   - Cognitive Science
 
-# Peer review service (shown on publications page)
+# Peer review service metadata (not currently displayed)
 peer_review_venues:
   - ACM CHI
   - ACM AutomotiveUI
