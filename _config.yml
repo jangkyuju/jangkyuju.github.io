@@ -149,6 +149,8 @@ exclude:
   - LICENSE
   - "*.zip"
   - package.json
+  - DEVELOPMENT.md
+  - scripts
   - agent-design.md
   - CLAUDE.md
   - .claude
