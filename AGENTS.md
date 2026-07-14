@@ -61,7 +61,7 @@ Push to `main` branch → GitHub Actions (`.github/workflows/pages-deploy.yml`) 
 ## Key Design Decisions
 
 - Chirpy sidebar is hidden via CSS (`#sidebar { display: none }`); replaced with custom top navbar
-- Dark mode: `html[data-mode="dark"]` attribute (compatible with Chirpy's mechanism)
+- The site is light-only; all pages use the bundled Pretendard variable font.
 - All content data in `_data/*.yml` — edit these to update content without touching layout files
 - Blog uses Chirpy's default post layout (search, TOC, tags preserved)
 

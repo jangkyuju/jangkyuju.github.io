@@ -40,8 +40,8 @@ social_preview_image: /assets/img/social-preview.png
 # ====================
 # Theme Settings
 # ====================
-# light | dark | (leave empty = auto)
-theme_mode:
+# The site is intentionally light-only.
+theme_mode: light
 
 # Sidebar (Chirpy default) - we override with top navbar in _layouts/default.html
 # Keep these for SEO / meta purposes
