@@ -4,6 +4,18 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+function ConvertTo-WslPath {
+  param([Parameter(Mandatory = $true)][string]$WindowsPath)
+
+  if ($WindowsPath -notmatch '^([A-Za-z]):\\(.*)$') {
+    throw "Unsupported Windows path: $WindowsPath"
+  }
+
+  $drive = $Matches[1].ToLowerInvariant()
+  $relativePath = $Matches[2] -replace '\\', '/'
+  return "/mnt/$drive/$relativePath"
+}
+
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $installedDistros = @(& wsl.exe --list --quiet) -replace "`0", ""
 
@@ -22,7 +34,7 @@ if ($LASTEXITCODE -ne 0) {
   throw "Ruby installation failed with exit code $LASTEXITCODE."
 }
 
-$wslRepoRoot = (& wsl.exe -d $Distro -- wslpath -a $repoRoot).Trim()
+$wslRepoRoot = ConvertTo-WslPath $repoRoot
 
 Write-Host "Installing Jekyll dependencies for this repository..."
 & wsl.exe -d $Distro -- bash -lc `

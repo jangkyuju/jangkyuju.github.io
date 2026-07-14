@@ -10,3 +10,4 @@
 - Removed IVI / Automotive UX from the Home research interests.
 - Simplified the Publications header, removed summary cards and peer review service, and added a CV-driven Posters section.
 - Enforced the bundled Pretendard variable font across all page content and removed dark theme support and controls.
+- Fixed WSL launcher path conversion so Windows repository paths map reliably to `/mnt/<drive>/...`.
