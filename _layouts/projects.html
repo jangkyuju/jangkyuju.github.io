@@ -116,19 +116,23 @@ layout: default
       {% if project.links %}
       <div class="pub-links" style="margin-top:1rem;">
         {% if project.links.paper %}
-        <a href="{{ project.links.paper }}" class="pub-link" target="_blank" rel="noopener noreferrer">
+        <a href="{{ project.links.paper }}" class="pub-link" target="_blank" rel="noopener noreferrer"
+           data-analytics-event="project_paper_click" data-analytics-label="{{ project.title | escape }}">
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           Paper
         </a>
         {% endif %}
         {% if project.links.demo %}
-        <a href="{{ project.links.demo }}" class="pub-link" target="_blank" rel="noopener noreferrer">Demo</a>
+        <a href="{{ project.links.demo }}" class="pub-link" target="_blank" rel="noopener noreferrer"
+           data-analytics-event="project_demo_click" data-analytics-label="{{ project.title | escape }}">Demo</a>
         {% endif %}
         {% if project.links.code %}
-        <a href="{{ project.links.code }}" class="pub-link" target="_blank" rel="noopener noreferrer">Code</a>
+        <a href="{{ project.links.code }}" class="pub-link" target="_blank" rel="noopener noreferrer"
+           data-analytics-event="project_code_click" data-analytics-label="{{ project.title | escape }}">Code</a>
         {% endif %}
         {% if project.links.report %}
-        <a href="{{ project.links.report }}" class="pub-link" target="_blank" rel="noopener noreferrer">Report</a>
+        <a href="{{ project.links.report }}" class="pub-link" target="_blank" rel="noopener noreferrer"
+           data-analytics-event="project_report_click" data-analytics-label="{{ project.title | escape }}">Report</a>
         {% endif %}
       </div>
       {% endif %}

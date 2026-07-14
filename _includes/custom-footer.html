@@ -4,7 +4,8 @@
 
     <div class="footer-social">
       <!-- Email -->
-      <a href="mailto:{{ site.data.profile.email }}" aria-label="Email">
+      <a href="mailto:{{ site.data.profile.email }}" aria-label="Email"
+         data-analytics-event="email_click" data-analytics-label="footer">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -14,7 +15,8 @@
       </a>
 
       <!-- LinkedIn -->
-      <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+         data-analytics-event="linkedin_click" data-analytics-label="footer">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -25,7 +27,8 @@
       </a>
 
       <!-- GitHub -->
-      <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+         data-analytics-event="github_click" data-analytics-label="footer">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

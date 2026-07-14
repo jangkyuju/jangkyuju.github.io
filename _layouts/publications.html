@@ -11,7 +11,8 @@ layout: default
       Below are my published research papers from peer-reviewed journals and conferences.
       For a complete list, please visit my
       <a href="{{ site.data.profile.google_scholar }}" target="_blank" rel="noopener noreferrer"
-         class="text-link" style="display:inline-flex;align-items:center;gap:0.25rem;">
+         class="text-link" style="display:inline-flex;align-items:center;gap:0.25rem;"
+         data-analytics-event="scholar_click" data-analytics-label="publications-header">
         Google Scholar profile
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
              viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -102,7 +103,8 @@ layout: default
               {% if pub.links %}
               <div class="pub-links">
               {% if pub.links.paper %}
-              <a href="{{ pub.links.paper }}" class="pub-link" target="_blank" rel="noopener noreferrer">
+              <a href="{{ pub.links.paper }}" class="pub-link" target="_blank" rel="noopener noreferrer"
+                 data-analytics-event="publication_paper_click" data-analytics-label="{{ pub.title | escape }}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
                      fill="none" stroke="currentColor" stroke-width="2"
                      stroke-linecap="round" stroke-linejoin="round">
@@ -113,7 +115,8 @@ layout: default
               </a>
               {% endif %}
               {% if pub.links.poster %}
-              <a href="{{ pub.links.poster }}" class="pub-link" target="_blank" rel="noopener noreferrer">
+              <a href="{{ pub.links.poster }}" class="pub-link" target="_blank" rel="noopener noreferrer"
+                 data-analytics-event="publication_poster_click" data-analytics-label="{{ pub.title | escape }}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
                      fill="none" stroke="currentColor" stroke-width="2"
                      stroke-linecap="round" stroke-linejoin="round">
@@ -127,7 +130,8 @@ layout: default
               </a>
               {% endif %}
               {% if pub.links.arxiv %}
-              <a href="{{ pub.links.arxiv }}" class="pub-link" target="_blank" rel="noopener noreferrer">
+              <a href="{{ pub.links.arxiv }}" class="pub-link" target="_blank" rel="noopener noreferrer"
+                 data-analytics-event="publication_arxiv_click" data-analytics-label="{{ pub.title | escape }}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
                      fill="none" stroke="currentColor" stroke-width="2"
                      stroke-linecap="round" stroke-linejoin="round">
@@ -138,7 +142,8 @@ layout: default
               </a>
               {% endif %}
               {% if pub.links.code %}
-              <a href="{{ pub.links.code }}" class="pub-link" target="_blank" rel="noopener noreferrer">
+              <a href="{{ pub.links.code }}" class="pub-link" target="_blank" rel="noopener noreferrer"
+                 data-analytics-event="publication_code_click" data-analytics-label="{{ pub.title | escape }}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
                      fill="none" stroke="currentColor" stroke-width="2"
                      stroke-linecap="round" stroke-linejoin="round">
@@ -149,7 +154,8 @@ layout: default
               </a>
               {% endif %}
               {% if pub.links.demo %}
-              <a href="{{ pub.links.demo }}" class="pub-link" target="_blank" rel="noopener noreferrer">
+              <a href="{{ pub.links.demo }}" class="pub-link" target="_blank" rel="noopener noreferrer"
+                 data-analytics-event="publication_demo_click" data-analytics-label="{{ pub.title | escape }}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
                      fill="none" stroke="currentColor" stroke-width="2"
                      stroke-linecap="round" stroke-linejoin="round">

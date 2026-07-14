@@ -23,7 +23,8 @@ layout: default
       <div class="contact-card">
         <h2>Get in Touch</h2>
 
-        <a href="mailto:{{ site.data.profile.email }}" class="contact-item">
+        <a href="mailto:{{ site.data.profile.email }}" class="contact-item"
+           data-analytics-event="email_click" data-analytics-label="contact-card">
           <span class="contact-item-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -38,7 +39,8 @@ layout: default
         </a>
 
         <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener noreferrer"
-           class="contact-item">
+           class="contact-item"
+           data-analytics-event="linkedin_click" data-analytics-label="contact-card">
           <span class="contact-item-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -54,7 +56,8 @@ layout: default
         </a>
 
         <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer"
-           class="contact-item">
+           class="contact-item"
+           data-analytics-event="github_click" data-analytics-label="contact-card">
           <span class="contact-item-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -161,7 +164,8 @@ layout: default
       <p class="form-note">
         This form opens your email app; it does not send or store your message on this site.
         You can also email directly at
-        <a href="mailto:{{ site.data.profile.email }}" class="text-link">{{ site.data.profile.email }}</a>.
+        <a href="mailto:{{ site.data.profile.email }}" class="text-link"
+           data-analytics-event="email_click" data-analytics-label="contact-note">{{ site.data.profile.email }}</a>.
       </p>
 
     </div>

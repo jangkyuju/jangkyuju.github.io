@@ -28,7 +28,8 @@ layout: default
       <!-- Social icon buttons -->
       <div class="home-social-row">
 
-        <a href="mailto:{{ site.data.profile.email }}" class="home-social-btn" aria-label="Email">
+        <a href="mailto:{{ site.data.profile.email }}" class="home-social-btn" aria-label="Email"
+           data-analytics-event="email_click" data-analytics-label="home-social">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -38,7 +39,8 @@ layout: default
         </a>
 
         <a href="{{ site.data.profile.google_scholar }}" target="_blank" rel="noopener noreferrer"
-           class="home-social-btn" aria-label="Google Scholar">
+           class="home-social-btn" aria-label="Google Scholar"
+           data-analytics-event="scholar_click" data-analytics-label="home-social">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -48,7 +50,8 @@ layout: default
         </a>
 
         <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener noreferrer"
-           class="home-social-btn" aria-label="LinkedIn">
+           class="home-social-btn" aria-label="LinkedIn"
+           data-analytics-event="linkedin_click" data-analytics-label="home-social">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -59,7 +62,8 @@ layout: default
         </a>
 
         <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer"
-           class="home-social-btn" aria-label="GitHub">
+           class="home-social-btn" aria-label="GitHub"
+           data-analytics-event="github_click" data-analytics-label="home-social">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -207,7 +211,8 @@ layout: default
           <p class="home-pub-year">{{ pub.year }}</p>
           <div class="home-pub-links">
             {% if pub.links.paper %}
-            <a href="{{ pub.links.paper }}" class="home-pub-link" target="_blank" rel="noopener noreferrer">
+            <a href="{{ pub.links.paper }}" class="home-pub-link" target="_blank" rel="noopener noreferrer"
+               data-analytics-event="publication_paper_click" data-analytics-label="{{ pub.title | escape }}">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
                    fill="none" stroke="currentColor" stroke-width="2"
                    stroke-linecap="round" stroke-linejoin="round">
@@ -218,12 +223,14 @@ layout: default
             </a>
             {% endif %}
             {% if pub.links.arxiv %}
-            <a href="{{ pub.links.arxiv }}" class="home-pub-link" target="_blank" rel="noopener noreferrer">
+            <a href="{{ pub.links.arxiv }}" class="home-pub-link" target="_blank" rel="noopener noreferrer"
+               data-analytics-event="publication_arxiv_click" data-analytics-label="{{ pub.title | escape }}">
               arXiv
             </a>
             {% endif %}
             {% if pub.links.code %}
-            <a href="{{ pub.links.code }}" class="home-pub-link" target="_blank" rel="noopener noreferrer">
+            <a href="{{ pub.links.code }}" class="home-pub-link" target="_blank" rel="noopener noreferrer"
+               data-analytics-event="publication_code_click" data-analytics-label="{{ pub.title | escape }}">
               Code
             </a>
             {% endif %}

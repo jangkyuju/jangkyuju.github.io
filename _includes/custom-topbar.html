@@ -22,7 +22,8 @@
       <!-- CV Download button -->
       {% if site.data.profile.cv_pdf %}
       <a href="{{ site.data.profile.cv_pdf }}" target="_blank" rel="noopener noreferrer"
-         class="btn-cv topbar-cv-btn" aria-label="Download CV">
+         class="btn-cv topbar-cv-btn" aria-label="Download CV"
+         data-analytics-event="cv_download" data-analytics-label="topbar">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
              fill="none" stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round">

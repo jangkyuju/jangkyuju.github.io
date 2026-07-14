@@ -1,0 +1,26 @@
+{% assign ga_measurement_id = site.analytics.google.id | default: "" %}
+{% if ga_measurement_id != "" %}
+<!-- GA4 custom click events. The base GA tag is loaded by Chirpy in production. -->
+<script>
+  (function() {
+    function sendEvent(link) {
+      if (typeof gtag !== 'function') return;
+
+      var eventName = link.getAttribute('data-analytics-event');
+      if (!eventName) return;
+
+      gtag('event', eventName, {
+        link_text: (link.textContent || link.getAttribute('aria-label') || '').trim(),
+        link_url: link.href || '',
+        item_label: link.getAttribute('data-analytics-label') || '',
+        page_path: window.location.pathname
+      });
+    }
+
+    document.addEventListener('click', function(event) {
+      var link = event.target.closest('a[data-analytics-event]');
+      if (link) sendEvent(link);
+    });
+  })();
+</script>
+{% endif %}
