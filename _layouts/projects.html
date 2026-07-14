@@ -5,7 +5,7 @@ layout: default
 <div class="page-container projects-page">
 
   <!-- Header -->
-  <div style="margin-bottom:3rem;">
+  <div style="margin-bottom: 1rem;">
     <h1>Projects</h1>
     <p class="page-subtitle">
       Industry and research projects in automotive UX, human-AI interaction, and cognitive engineering.
@@ -21,7 +21,7 @@ layout: default
     {% if p.status == 'Completed' %}{% assign completed = completed | plus: 1 %}{% endif %}
   {% endfor %}
 
-  <div class="pub-stats-grid" style="margin-bottom:3rem;">
+  <!-- <div class="pub-stats-grid" style="margin-bottom:3rem;">
     <div class="stat-card">
       <span class="stat-number">{{ total }}</span>
       <span class="stat-label">Total Projects</span>
@@ -34,7 +34,7 @@ layout: default
       <span class="stat-number">{{ completed }}</span>
       <span class="stat-label">Completed</span>
     </div>
-  </div>
+  </div> -->
 
   <!-- Filter Bar -->
   <div class="project-filters" id="project-filters">
@@ -62,6 +62,25 @@ layout: default
              data-status="{{ project.status }}"
              data-org="{{ project.organization }}"
              data-tags="{{ tags_str }}">
+
+      <div class="project-card-image-wrap">
+        {% if project.image and project.image != "" %}
+        <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="project-card-image" loading="lazy">
+        {% else %}
+        <div class="project-card-image-placeholder" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.5"
+               stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span>Project image</span>
+        </div>
+        {% endif %}
+      </div>
+
+      <div class="project-card-content">
 
       <!-- Card Header -->
       <div class="project-card-header">
@@ -113,6 +132,8 @@ layout: default
         {% endif %}
       </div>
       {% endif %}
+
+      </div>
 
     </article>
     {% endfor %}

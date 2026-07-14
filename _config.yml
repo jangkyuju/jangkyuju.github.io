@@ -52,7 +52,7 @@ icon:
 # ====================
 analytics:
   google:
-    id: ""   # Replace with your GA4 Measurement ID (e.g., G-XXXXXXXXXX)
+    id: "G-JQ6PJW9F7H"   # Replace with your GA4 Measurement ID (e.g., G-XXXXXXXXXX)
 
 # ====================
 # Comments (disabled)

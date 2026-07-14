@@ -4,7 +4,6 @@
 # status: Published | Accepted | Under Review
 # subtype: (optional) Paper | Poster | Extended Abstract
 # venue_short: abbreviated venue name shown on card (e.g. "Human Factors", "ACM AutomotiveUI")
-# tldr: 1-2 sentence summary shown on card
 # image: /assets/img/pub/FILENAME.jpg  - place files in assets/img/pub/
 # links: paper, poster, arxiv, code, demo (all optional)
 # award: (optional) award name
@@ -19,8 +18,6 @@
   type: Journal
   status: Published
   featured: true
-  citations: 0
-  tldr: "Increasing the visual complexity of automotive head-up displays amplifies attentional tunneling, impairing drivers' ability to detect peripheral hazards."
   image: ""
   links:
     paper: "https://doi.org/10.1177/00187208231181496"
@@ -44,8 +41,6 @@
   type: Conference
   subtype: Poster
   status: Published
-  citations: 0
-  tldr: "Gradient boosting and random forest models outperform single classifiers in predicting user preferences for in-vehicle infotainment, enabling more accurate personalized recommendations."
   image: ""
   links:
     paper: "https://doi.org/10.1145/3641308.3685021"
@@ -62,13 +57,11 @@
 - title: "The modulation of value-driven attentional capture by exploration for reward information"
   authors: "Ju, J., & Cho, Y. S."
   venue: "Journal of Experimental Psychology: Learning, Memory, and Cognition, 49(2), 181-197"
-  venue_short: "JEP: LMC"
+  venue_short: "Journal of Experimental Psychology: Learning, Memory, and Cognition"
   year: 2023
   type: Journal
   status: Published
   featured: true
-  citations: 5
-  tldr: "Reward-associated stimuli capture attention more strongly when participants actively explore for reward information, suggesting exploration amplifies value-driven attentional capture."
   image: ""
   links:
     paper: "https://doi.org/10.1037/xlm0001189"
@@ -91,8 +84,6 @@
   year: 2023
   type: Journal
   status: Published
-  citations: 8
-  tldr: "Computational simulation of associative learning models reveals that value-driven attentional capture is best explained by models incorporating prediction-error-based updating."
   image: ""
   links:
     paper: "https://doi.org/10.3758/s13423-023-02296-0"

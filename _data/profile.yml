@@ -4,12 +4,12 @@
 # ====================
 
 name: Jangkyu Ju
-tagline: "Research Engineer - Data Scientist - AI Engineer"
+tagline: "Research Engineer / Data Scientist / AI Engineer"
 title: Research Engineer & Data Scientist
-lab: Infotainment Planning Team
+lab: Data Insight Team, ICT Management Division
 university: Hyundai Motor Group
 email: ju.jk.psych@gmail.com
-avatar: ""
+avatar: "/assets/img/yosemite_image_renew.jpg"
 
 # Social links
 google_scholar: "https://scholar.google.com/citations?user=qA_-6TQAAAAJ&hl=en"
@@ -30,14 +30,20 @@ bio:
     <strong>Human-Computer Interaction</strong>, and <strong>Artificial Intelligence</strong>.
     I study how information presentation shapes human cognition, judgment, and action -
     and build intelligent systems that align with how people actually perceive and process information.
+  - >
+    I will begin my Ph.D. studies in
+    <a href="https://www.cc.gatech.edu/degree-programs/phd-human-centered-computing" target="_blank" rel="noopener noreferrer" class="text-link">Human-Centered Computing</a>
+    at <a href="https://www.gatech.edu/" target="_blank" rel="noopener noreferrer" class="text-link">Georgia Tech</a>.
+    I will work with the <a href="https://vis.gatech.edu/" target="_blank" rel="noopener noreferrer" class="text-link">GT Visualization Lab</a>
+    and be advised by <a href="https://cyxiong.com/" target="_blank" rel="noopener noreferrer" class="text-link">Cindy Xiong Bearfield</a>.
 
 # Research interests (pill badges on home page)
 research_interests:
   - Human-AI Interaction
-  - Visual Attention & Cognition
-  - User Behavior Analytics
-  - Adaptive Interfaces
+  - Data Science & Visualization
+  - Visual Attention
   - Cognitive Science
+  - Adaptive Interfaces
 
 # Peer review service metadata (not currently displayed)
 peer_review_venues:

@@ -80,16 +80,11 @@ layout: default
               </span>
             </div>
 
-            <!-- Authors (first author bold) -->
+            <!-- Authors (only Ju. J. is bold) -->
             <p class="pub-authors">
-              {% assign author_parts = pub.authors | split: ", " %}
-              <strong>{{ author_parts[0] }}</strong>{% if author_parts.size > 1 %}, {{ author_parts | slice: 1, 20 | join: ", " }}{% endif %}
+              {% assign author_parts = pub.authors | split: "Ju, J." %}
+              {% for author_part in author_parts %}{{ author_part }}{% unless forloop.last %}<strong>Ju, J.</strong>{% endunless %}{% endfor %}
             </p>
-
-            <!-- TL;DR -->
-            {% if pub.tldr and pub.tldr != "" %}
-            <p class="pub-tldr">{{ pub.tldr }}</p>
-            {% endif %}
 
             <!-- Venue line: venue_short - year -->
             <p class="pub-venue-line">
@@ -166,38 +161,6 @@ layout: default
               </div><!-- /.pub-links -->
               {% endif %}
 
-              <!-- BibTeX + Citations -->
-              <div class="pub-meta-actions">
-                {% if pub.citations and pub.citations > 0 %}
-                <a href="{{ pub.links.paper }}" target="_blank" rel="noopener noreferrer"
-                   class="pub-citations" title="Cited by {{ pub.citations }}">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
-                       fill="none" stroke="currentColor" stroke-width="2"
-                       stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                    <circle cx="9" cy="7" r="4"/>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                  </svg>
-                  Cited by {{ pub.citations }}
-                </a>
-                {% endif %}
-                {% if pub.bibtex %}
-                <button class="pub-bibtex-btn" onclick="toggleBibtex(this)" title="Copy BibTeX">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
-                       fill="none" stroke="currentColor" stroke-width="2"
-                       stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
-                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
-                  </svg>
-                  Cite
-                </button>
-                <div class="pub-bibtex-box" style="display:none;">
-                  <pre class="pub-bibtex-pre">{{ pub.bibtex | strip }}</pre>
-                  <button class="pub-bibtex-copy" onclick="copyBibtex(this)">Copy</button>
-                </div>
-                {% endif %}
-              </div>
             </div><!-- /.pub-links-row -->
 
           </div><!-- /.pub-content -->
@@ -208,40 +171,47 @@ layout: default
   </div>
   {% endfor %}
 
-  <script>
-  function toggleBibtex(btn) {
-    var box = btn.nextElementSibling;
-    var isOpen = box.style.display !== 'none';
-    box.style.display = isOpen ? 'none' : 'block';
-    btn.textContent = isOpen ? 'Cite' : 'Close';
-  }
-  function copyBibtex(btn) {
-    var pre = btn.previousElementSibling;
-    navigator.clipboard.writeText(pre.textContent).then(function() {
-      btn.textContent = 'Copied!';
-      setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
-    });
-  }
-  </script>
-
   {% assign posters = site.data.cv.presentations | where: "type", "Poster" %}
   {% if posters.size > 0 %}
   <section class="posters-section" aria-labelledby="posters-heading">
     <h2 id="posters-heading">Posters</h2>
-    <ol class="poster-list">
+    <div class="poster-list">
       {% for poster in posters %}
-      <li class="poster-item">
-        <span class="poster-year">{{ poster.year }}</span>
-        <div class="poster-content">
-          <h3>{{ poster.title }}</h3>
-          <p class="poster-authors">{{ poster.authors }}</p>
-          <p class="poster-venue">
-            {{ poster.event }}{% if poster.location and poster.location != "" %} - {{ poster.location }}{% endif %}
+      <article class="pub-card">
+        <div class="pub-card-inner">
+          {% if poster.image and poster.image != "" %}
+          <div class="pub-image-wrapper">
+            <img src="{{ poster.image | relative_url }}" alt="{{ poster.title }} poster" class="pub-image" loading="lazy">
+          </div>
+          {% else %}
+          <div class="pub-image-wrapper pub-image-placeholder" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="1.5"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M7 16l3-3 2 2 3-4 2 3"/>
+            </svg>
+            <span>Poster</span>
+          </div>
+          {% endif %}
+          <div class="pub-content">
+            <div class="pub-title-row">
+              <h3 class="pub-title">{{ poster.title }}</h3>
+              <span class="pub-type-badge">Poster</span>
+            </div>
+          <p class="pub-authors">
+            {% assign poster_author_parts = poster.authors | split: "Ju, J." %}
+            {% for author_part in poster_author_parts %}{{ author_part }}{% unless forloop.last %}<strong>Ju, J.</strong>{% endunless %}{% endfor %}
           </p>
+          <p class="pub-venue-line">
+            {{ poster.event }}{% if poster.location and poster.location != "" %} - {{ poster.location }}{% endif %}
+            <span class="pub-venue-sep">-</span> {{ poster.year }}
+          </p>
+          </div>
         </div>
-      </li>
+      </article>
       {% endfor %}
-    </ol>
+    </div>
   </section>
   {% endif %}
 

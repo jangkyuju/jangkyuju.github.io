@@ -14,8 +14,6 @@ layout: default
       <div class="home-profile-glow-wrap">
         <div class="home-profile-glow"></div>
         <div class="home-profile-fallback" aria-hidden="true">
-          <span>JJ</span>
-          <small>Human - Data - AI</small>
         </div>
         {% if site.data.profile.avatar and site.data.profile.avatar != "" %}
         <img
@@ -87,7 +85,6 @@ layout: default
           <p>{{ para }}</p>
         {% endfor %}
       </div>
-
       <!-- Research interests -->
       {% if site.data.profile.research_interests %}
       <div class="home-interests">
@@ -133,6 +130,39 @@ layout: default
     </div>
   </section>
 
+  <script>
+  (function() {
+    var newsCard = document.querySelector('.home-news-card');
+    if (!newsCard) return;
+
+    var visibleRows = 5;
+
+    function fitNewsHeight() {
+      var rows = Array.prototype.slice.call(
+        newsCard.querySelectorAll('.home-news-item')
+      ).slice(0, visibleRows);
+      var rowHeight = rows.reduce(function(total, row) {
+        return total + row.getBoundingClientRect().height;
+      }, 0);
+      var styles = window.getComputedStyle(newsCard);
+      var borders = parseFloat(styles.borderTopWidth) + parseFloat(styles.borderBottomWidth);
+      newsCard.style.height = (rowHeight + borders) + 'px';
+    }
+
+    window.addEventListener('resize', fitNewsHeight);
+    if (window.ResizeObserver) {
+      var newsObserver = new ResizeObserver(fitNewsHeight);
+      newsCard.querySelectorAll('.home-news-item').forEach(function(row) {
+        newsObserver.observe(row);
+      });
+    }
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(fitNewsHeight);
+    }
+    fitNewsHeight();
+  })();
+  </script>
+
   <!-- ============================================================
        SELECTED PUBLICATIONS
        ============================================================ -->
@@ -168,14 +198,13 @@ layout: default
 
         <!-- Content -->
         <div class="home-pub-content">
-          <p class="home-pub-venue">
-            {% if pub.venue_short and pub.venue_short != "" %}{{ pub.venue_short }}{% else %}{{ pub.venue }}{% endif %}
-            &nbsp;-&nbsp;{{ pub.year }}
-          </p>
+          <p class="home-pub-venue">{{ pub.venue_short }}</p>
           <h3 class="home-pub-title">{{ pub.title }}</h3>
-          {% if pub.tldr and pub.tldr != "" %}
-            <p class="home-pub-tldr">{{ pub.tldr }}</p>
-          {% endif %}
+          <p class="home-pub-authors">
+            {% assign home_author_parts = pub.authors | split: "Ju, J." %}
+            {% for author_part in home_author_parts %}{{ author_part }}{% unless forloop.last %}<strong>Ju, J.</strong>{% endunless %}{% endfor %}
+          </p>
+          <p class="home-pub-year">{{ pub.year }}</p>
           <div class="home-pub-links">
             {% if pub.links.paper %}
             <a href="{{ pub.links.paper }}" class="home-pub-link" target="_blank" rel="noopener noreferrer">
