@@ -34,4 +34,4 @@ if ($LASTEXITCODE -ne 0) {
 
 Write-Host ""
 Write-Host "Setup complete. Start the live preview with:"
-Write-Host "  .\scripts\dev.ps1"
+Write-Host "  .\scripts\dev.cmd"

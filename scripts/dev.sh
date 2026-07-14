@@ -6,7 +6,7 @@ repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$repo_root"
 
 if ! command -v bundle >/dev/null 2>&1; then
-  echo "Bundler is not installed. Run scripts/setup-wsl.ps1 from PowerShell first." >&2
+  echo "Bundler is not installed. Run scripts/setup-wsl.cmd from Windows first." >&2
   exit 1
 fi
 

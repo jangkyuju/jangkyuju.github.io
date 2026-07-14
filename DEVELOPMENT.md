@@ -17,7 +17,7 @@ WSL2 while VS Code edits the existing Windows workspace.
 4. From PowerShell in this repository, install Ruby and the project gems:
 
    ```powershell
-   .\scripts\setup-wsl.ps1
+   .\scripts\setup-wsl.cmd
    ```
 
 ## Live Preview
@@ -25,7 +25,7 @@ WSL2 while VS Code edits the existing Windows workspace.
 Start the development server:
 
 ```powershell
-.\scripts\dev.ps1
+.\scripts\dev.cmd
 ```
 
 Open [http://127.0.0.1:4000](http://127.0.0.1:4000). Keep VS Code and the
@@ -37,7 +37,7 @@ Stop the server with `Ctrl+C`.
 Use a different port when necessary:
 
 ```powershell
-.\scripts\dev.ps1 -Port 4001
+.\scripts\dev.cmd -Port 4001
 ```
 
 ## Common Editing Locations
