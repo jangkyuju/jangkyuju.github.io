@@ -2,15 +2,34 @@
 layout: default
 ---
 
-<div class="page-container analytics-page analytics-empty-page">
+{% assign analytics_dashboard_url = site.analytics.google.dashboard_url | default: "" %}
+
+<div class="page-container analytics-page{% if analytics_dashboard_url == "" %} analytics-empty-page{% endif %}">
   <header class="analytics-empty-header">
-    <span class="analytics-status-badge">Not connected yet</span>
+    <span class="analytics-status-badge{% if analytics_dashboard_url != "" %} analytics-status-connected{% endif %}">
+      {% if analytics_dashboard_url != "" %}Live dashboard{% else %}Not connected yet{% endif %}
+    </span>
     <h1>Look who's here</h1>
     <p class="page-subtitle">
-      This page will become a privacy-conscious view of how people discover and use this portfolio.
+      A privacy-conscious view of how people discover and use this portfolio.
     </p>
   </header>
 
+  {% if analytics_dashboard_url != "" %}
+  <section class="analytics-dashboard" aria-label="Website analytics dashboard">
+    <div class="analytics-dashboard-frame">
+      <iframe
+        src="{{ analytics_dashboard_url }}"
+        title="Website analytics dashboard"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="analytics-dashboard-note">
+      Metrics are aggregated and may be delayed. No visitor names or individual browsing histories are shown.
+    </p>
+  </section>
+  {% else %}
   <section class="analytics-empty-card" aria-labelledby="analytics-status-title">
     <div class="analytics-empty-icon" aria-hidden="true">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -27,7 +46,9 @@ layout: default
       </p>
     </div>
   </section>
+  {% endif %}
 
+  {% if analytics_dashboard_url == "" %}
   <section class="analytics-principles" aria-labelledby="analytics-principles-title">
     <h2 id="analytics-principles-title">What will appear here</h2>
     <div class="analytics-principles-grid">
@@ -48,7 +69,7 @@ layout: default
       </article>
     </div>
   </section>
+  {% endif %}
 
-  <!-- Owner note: configure analytics.google.id in _config.yml and replace this
-       empty state only after a real, privacy-reviewed dashboard is available. -->
+  <!-- Set analytics.google.dashboard_url after creating a privacy-reviewed Looker Studio report. -->
 </div>

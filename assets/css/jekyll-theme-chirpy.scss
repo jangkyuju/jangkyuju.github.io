@@ -610,6 +610,38 @@ h6 {
   margin: 0 0 0.875rem 0;
 }
 
+.analytics-dashboard {
+  margin-bottom: 3rem;
+}
+
+.analytics-dashboard-frame {
+  overflow: hidden;
+  border: 1px solid var(--custom-border);
+  border-radius: var(--custom-radius);
+  background: var(--custom-card);
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+}
+
+.analytics-dashboard-frame iframe {
+  display: block;
+  width: 100%;
+  min-height: 720px;
+  border: 0;
+}
+
+.analytics-dashboard-note {
+  margin: 0.75rem 0 0;
+  color: var(--custom-muted-fg);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.analytics-status-connected {
+  border-color: rgba(22, 101, 52, 0.22);
+  background: rgba(34, 197, 94, 0.12);
+  color: #166534;
+}
+
 .home-bio-text {
   margin-bottom: 2rem;
 }
