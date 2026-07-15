@@ -18,7 +18,7 @@
   type: Journal
   status: Published
   featured: true
-  image: ""
+  image: "/assets/img/pub/hud-attentional-tunneling.png"
   links:
     paper: "https://doi.org/10.1177/00187208231181496"
   bibtex: |
@@ -41,7 +41,7 @@
   type: Conference
   subtype: Poster
   status: Published
-  image: ""
+  image: "/assets/img/pub/ivi-recommendation-systems.png"
   links:
     paper: "https://doi.org/10.1145/3641308.3685021"
   bibtex: |
@@ -62,7 +62,7 @@
   type: Journal
   status: Published
   featured: true
-  image: ""
+  image: "/assets/img/pub/reward-information-attentional-capture.png"
   links:
     paper: "https://doi.org/10.1037/xlm0001189"
   bibtex: |
@@ -84,7 +84,7 @@
   year: 2023
   type: Journal
   status: Published
-  image: ""
+  image: "/assets/img/pub/value-driven-attention-models.png"
   links:
     paper: "https://doi.org/10.3758/s13423-023-02296-0"
   bibtex: |

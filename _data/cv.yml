@@ -76,6 +76,7 @@ presentations:
     title: "Comparative analysis of ensemble machine learning models for personalized in-vehicle infotainment recommendation systems"
     event: "16th International Conference on Automotive User Interfaces and Interactive Vehicular Applications"
     type: "Poster"
+    image: "/assets/img/projects/personalized-ivi-recommendation-poster.png"
     location: "Stanford, USA"
     year: "2024"
 
@@ -90,6 +91,7 @@ presentations:
     title: "Simple is the best! Visual complexity of head-up display in automobiles modulates attentional tunneling and driving performance"
     event: "13th International Conference of the Applied Human Factors and Ergonomics"
     type: "Poster"
+    image: "/assets/img/projects/hud-complexity-ahfe-poster.png"
     location: "New York, USA"
     year: "2022"
 
@@ -112,6 +114,7 @@ presentations:
     title: "Distinctive effects of entropy and variance of reward in value-driven attentional capture"
     event: "62nd Annual Meeting of the Psychonomic Society"
     type: "Poster"
+    image: "/assets/img/projects/reward-uncertainty-psychonomic-poster.png"
     location: "Virtual"
     year: "2021"
 

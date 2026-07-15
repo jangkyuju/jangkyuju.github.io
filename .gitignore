@@ -28,5 +28,8 @@ node_modules/
 ## Personal notes (contains private emails and internal project details)
 output/profile-notes.md
 
+## Local source images downloaded from Notion (only curated assets are published)
+assets/img/notion-source/
+
 ## Build artifacts
 *.zip
