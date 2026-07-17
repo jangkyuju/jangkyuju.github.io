@@ -84,6 +84,7 @@ presentations:
     title: "Distinctive effects of predictiveness and uncertainty of reward in value-driven attentional capture"
     event: "63rd Annual Meeting of the Psychonomic Society"
     type: "Poster"
+    image: "/assets/img/posters/psychonomic-2022-predictiveness-uncertainty-poster.jpeg"
     location: "Boston, USA"
     year: "2022"
 
@@ -96,16 +97,19 @@ presentations:
     year: "2022"
 
   - authors: "Ju, J., & Cho, Y. S."
-    title: "Impact of predictiveness and uncertainty of reward on value-driven attentional capture"
+    title: "The effects of predictiveness and uncertainty of reward on value-driven attentional capture"
     event: "2022 Annual Conference of the Korean Society of Cognitive and Biological Psychology"
     type: "Poster"
+    image: "/assets/img/posters/kscbp-2022-predictiveness-uncertainty-abstract.jpeg"
     location: "Virtual"
     year: "2022"
 
-  - authors: "Lee, J., Lee, N., Ju, J., Chae, J., Park, J., Ryu, H. S., & Cho, Y. S."
-    title: "Impact of visual complexity of head-up display on driving performance"
+  - authors: "Lee, N., Lee, J., Ju, J., Chae, J., Park, J., & Ryu, H. S."
+    title: "Simple is the best!: Visual complexity of head-up display modulates driving performance"
     event: "2022 Annual Conference of the Korean Society of Cognitive and Biological Psychology"
     type: "Talk"
+    image: "/assets/img/posters/kscbp-2022-hud-visual-complexity-abstract.jpeg"
+    show_in_posters: true
     location: "Virtual"
     year: "2022"
     award: "Outstanding Presentation Award"
