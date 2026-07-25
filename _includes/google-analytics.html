@@ -1,20 +1,93 @@
 {% assign ga_measurement_id = site.analytics.google.id | default: "" %}
 {% if ga_measurement_id != "" %}
-<!-- GA4 custom click events. The base GA tag is loaded by Chirpy in production. -->
+<!-- GA4 portfolio events. The base tag is loaded by Chirpy in production. -->
 <script>
   (function() {
-    function sendEvent(link) {
-      if (typeof gtag !== 'function') return;
+    function slugify(value) {
+      return String(value || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .slice(0, 80);
+    }
 
+    function pageGroup(pathname) {
+      if (pathname === '/') return 'home';
+      if (pathname.indexOf('/publications') === 0) return 'publications';
+      if (pathname.indexOf('/projects') === 0) return 'projects';
+      if (pathname.indexOf('/blog') === 0) return 'blog';
+      if (pathname.indexOf('/contact') === 0) return 'contact';
+      if (pathname.indexOf('/cv') === 0) return 'cv';
+      if (pathname.indexOf('/analytics') === 0) return 'analytics';
+      return 'other';
+    }
+
+    function eventMetadata(eventName, link) {
+      var label = (link.getAttribute('data-analytics-label') || '').trim();
+      var group = pageGroup(window.location.pathname);
+      var contentType = link.getAttribute('data-analytics-content-type') || '';
+      var linkType = link.getAttribute('data-analytics-link-type') || '';
+      var placement = link.getAttribute('data-analytics-placement') || '';
+      var contentId = link.getAttribute('data-analytics-id') || '';
+      var contentTitle = '';
+
+      if (eventName.indexOf('publication_') === 0) {
+        contentType = contentType || 'publication';
+        linkType = linkType || eventName.replace(/^publication_/, '').replace(/_click$/, '');
+        contentId = contentId || slugify(label);
+        contentTitle = label;
+        placement = placement || (group === 'home' ? 'home_featured' : group + '_list');
+      } else if (eventName.indexOf('project_') === 0) {
+        contentType = contentType || 'project';
+        linkType = linkType || eventName.replace(/^project_/, '').replace(/_click$/, '');
+        contentId = contentId || slugify(label);
+        contentTitle = label;
+        placement = placement || group + '_list';
+      } else {
+        linkType = linkType || eventName.replace(/_click$|_download$/, '');
+        placement = placement || slugify(label).replace(/-/g, '_') || group;
+      }
+
+      if (eventName === 'cv_download') contentType = contentType || 'cv';
+      if (eventName === 'email_click' || eventName === 'contact_intent') {
+        contentType = contentType || 'contact';
+      }
+      if (eventName === 'scholar_click' || eventName === 'linkedin_click' || eventName === 'github_click') {
+        contentType = contentType || 'profile';
+      }
+      if (eventName === 'dashboard_open') contentType = contentType || 'analytics';
+
+      var metadata = {
+        content_type: contentType || 'navigation',
+        link_type: linkType || 'link',
+        link_placement: placement || group,
+        page_group: group
+      };
+
+      if (contentId) metadata.content_id = contentId;
+      if (contentTitle) metadata.content_title = contentTitle;
+
+      if (link.protocol !== 'mailto:') {
+        try {
+          metadata.destination_host = new URL(link.href, window.location.href).hostname;
+        } catch (error) {
+          // Invalid destinations are already represented by page_group.
+        }
+      }
+
+      return metadata;
+    }
+
+    window.trackPortfolioEvent = function(eventName, parameters) {
+      if (typeof window.gtag !== 'function' || !eventName) return;
+      window.gtag('event', eventName, parameters || {});
+    };
+
+    function sendEvent(link) {
       var eventName = link.getAttribute('data-analytics-event');
       if (!eventName) return;
-
-      gtag('event', eventName, {
-        link_text: (link.textContent || link.getAttribute('aria-label') || '').trim(),
-        link_url: link.href || '',
-        item_label: link.getAttribute('data-analytics-label') || '',
-        page_path: window.location.pathname
-      });
+      window.trackPortfolioEvent(eventName, eventMetadata(eventName, link));
     }
 
     document.addEventListener('click', function(event) {

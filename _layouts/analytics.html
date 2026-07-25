@@ -26,8 +26,35 @@ layout: default
         referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
     <p class="analytics-dashboard-note">
-      Metrics are aggregated and may be delayed. No visitor names or individual browsing histories are shown.
+      Updated daily. The most recent 24-48 hours may change as data is processed.
+      Metrics are aggregated; no visitor names or individual browsing histories are shown.
     </p>
+    <a href="{{ analytics_dashboard_url }}" class="analytics-dashboard-open"
+       target="_blank" rel="noopener noreferrer"
+       data-analytics-event="dashboard_open" data-analytics-label="analytics-page">
+      Open dashboard in a new tab
+    </a>
+  </section>
+
+  <section class="analytics-principles analytics-connected-guide" aria-labelledby="analytics-guide-title">
+    <h2 id="analytics-guide-title">How to read this dashboard</h2>
+    <div class="analytics-principles-grid">
+      <article>
+        <span aria-hidden="true">01</span>
+        <h3>Discovery</h3>
+        <p>See which channels, device categories, and broad regions help people find this portfolio.</p>
+      </article>
+      <article>
+        <span aria-hidden="true">02</span>
+        <h3>Research interest</h3>
+        <p>Compare engagement with publications, projects, and long-form posts.</p>
+      </article>
+      <article>
+        <span aria-hidden="true">03</span>
+        <h3>Meaningful actions</h3>
+        <p>Track aggregated interest in papers, code, the CV, and ways to get in touch.</p>
+      </article>
+    </div>
   </section>
   {% else %}
   <section class="analytics-empty-card" aria-labelledby="analytics-status-title">

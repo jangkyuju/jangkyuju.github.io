@@ -155,6 +155,17 @@ layout: default
             var subject = document.getElementById('contact-subject').value.trim();
             var message = document.getElementById('contact-message').value.trim();
             var body = message + '\n\nFrom: ' + name + ' (' + email + ')';
+
+            if (typeof window.trackPortfolioEvent === 'function') {
+              window.trackPortfolioEvent('contact_intent', {
+                contact_method: 'email_form',
+                content_type: 'contact',
+                link_type: 'email',
+                link_placement: 'contact_form',
+                page_group: 'contact'
+              });
+            }
+
             window.location.href = 'mailto:{{ site.data.profile.email }}?subject=' +
               encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
           });

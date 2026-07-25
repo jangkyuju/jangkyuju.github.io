@@ -636,6 +636,24 @@ h6 {
   line-height: 1.6;
 }
 
+.analytics-dashboard-open {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.8rem;
+  color: var(--custom-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.analytics-dashboard-open:hover {
+  text-decoration: underline;
+}
+
+.analytics-connected-guide {
+  margin-top: 2.5rem;
+}
+
 .analytics-status-connected {
   border-color: rgba(22, 101, 52, 0.22);
   background: rgba(34, 197, 94, 0.12);
