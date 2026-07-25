@@ -2,23 +2,50 @@
 layout: default
 ---
 
-{% assign analytics_title_css_version = site.github.build_revision | default: site.time %}
-<link rel="stylesheet"
-      href="{{ '/assets/css/analytics-title.css' | relative_url }}?v={{ analytics_title_css_version | uri_escape }}">
+<style>
+  .analytics-page .analytics-empty-header {
+    max-width: none;
+  }
+
+  .analytics-subtitle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .analytics-subtitle-row .page-subtitle,
+  .analytics-subtitle-row .analytics-status-badge {
+    margin: 0;
+  }
+
+  .analytics-subtitle-row .analytics-status-badge {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 720px) {
+    .analytics-subtitle-row {
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+</style>
 
 {% assign analytics_dashboard_url = site.analytics.google.dashboard_url | default: "" %}
 
 <div class="page-container analytics-page{% if analytics_dashboard_url == "" %} analytics-empty-page{% endif %}">
   <header class="analytics-empty-header">
-    <div class="analytics-title-row">
-      <h1>Look who's here</h1>
+    <h1>Look who's here</h1>
+    <div class="analytics-subtitle-row">
+      <p class="page-subtitle">
+        A privacy-conscious view of how people discover and use this portfolio.
+      </p>
       <span class="analytics-status-badge{% if analytics_dashboard_url != "" %} analytics-status-connected{% endif %}">
         {% if analytics_dashboard_url != "" %}Live dashboard{% else %}Not connected yet{% endif %}
       </span>
     </div>
-    <p class="page-subtitle">
-      A privacy-conscious view of how people discover and use this portfolio.
-    </p>
   </header>
 
   {% if analytics_dashboard_url != "" %}
