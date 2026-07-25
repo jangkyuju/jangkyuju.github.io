@@ -2,6 +2,10 @@
 layout: default
 ---
 
+{% assign analytics_title_css_version = site.github.build_revision | default: site.time %}
+<link rel="stylesheet"
+      href="{{ '/assets/css/analytics-title.css' | relative_url }}?v={{ analytics_title_css_version | uri_escape }}">
+
 {% assign analytics_dashboard_url = site.analytics.google.dashboard_url | default: "" %}
 
 <div class="page-container analytics-page{% if analytics_dashboard_url == "" %} analytics-empty-page{% endif %}">

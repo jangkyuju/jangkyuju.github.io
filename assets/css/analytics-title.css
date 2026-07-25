@@ -1,0 +1,23 @@
+.analytics-title-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.analytics-title-row h1,
+.analytics-title-row .analytics-status-badge {
+  margin: 0;
+}
+
+.analytics-title-row .analytics-status-badge {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .analytics-title-row {
+    flex-wrap: wrap;
+  }
+}
