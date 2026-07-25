@@ -53,7 +53,7 @@ icon:
 analytics:
   google:
     id: "G-JQ6PJW9F7H"   # GA4 Measurement ID
-    dashboard_url: "https://datastudio.google.com/embed/reporting/30fdd278-a1a0-4433-8ce6-ce634768f095/page/p_kmdy0ozi5d"     # Looker Studio embed URL for the public analytics dashboard
+    dashboard_url: "https://datastudio.google.com/embed/reporting/f5cc2814-c167-467e-9d71-725e5ccb4066/page/i8q3F"     # Looker Studio embed URL for Portfolio Analytics
 
 # ====================
 # Comments (disabled)
