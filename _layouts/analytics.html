@@ -6,10 +6,12 @@ layout: default
 
 <div class="page-container analytics-page{% if analytics_dashboard_url == "" %} analytics-empty-page{% endif %}">
   <header class="analytics-empty-header">
-    <span class="analytics-status-badge{% if analytics_dashboard_url != "" %} analytics-status-connected{% endif %}">
-      {% if analytics_dashboard_url != "" %}Live dashboard{% else %}Not connected yet{% endif %}
-    </span>
-    <h1>Look who's here</h1>
+    <div class="analytics-title-row">
+      <h1>Look who's here</h1>
+      <span class="analytics-status-badge{% if analytics_dashboard_url != "" %} analytics-status-connected{% endif %}">
+        {% if analytics_dashboard_url != "" %}Live dashboard{% else %}Not connected yet{% endif %}
+      </span>
+    </div>
     <p class="page-subtitle">
       A privacy-conscious view of how people discover and use this portfolio.
     </p>
