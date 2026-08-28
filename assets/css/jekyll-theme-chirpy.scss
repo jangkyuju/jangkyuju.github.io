@@ -625,7 +625,7 @@ h6 {
 .analytics-dashboard-frame iframe {
   display: block;
   width: 100%;
-  min-height: 720px;
+  min-height: 1300px;
   border: 0;
 }
 
@@ -678,9 +678,9 @@ h6 {
 }
 
 .interest-tag {
-  padding: 0.25rem 0.75rem;
+  padding: 0.2rem 0.55rem;
   border-radius: 9999px;
-  font-size: 0.8125rem;
+  font-size: 0.7rem;
   background: var(--custom-accent);
   color: var(--custom-primary);
   display: inline-block;
@@ -688,8 +688,8 @@ h6 {
 
 .interests-tags {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-wrap: nowrap;
+  gap: 0.375rem;
 }
 
 /* ============================================================

@@ -37,10 +37,10 @@ layout: default
 
 <div class="page-container analytics-page{% if analytics_dashboard_url == "" %} analytics-empty-page{% endif %}">
   <header class="analytics-empty-header">
-    <h1>Look who's here</h1>
+    <h1>Analytics</h1>
     <div class="analytics-subtitle-row">
       <p class="page-subtitle">
-        A privacy-conscious view of how people discover and use this portfolio.
+        Exploratory data analysis of this website
       </p>
       <span class="analytics-status-badge{% if analytics_dashboard_url != "" %} analytics-status-connected{% endif %}">
         {% if analytics_dashboard_url != "" %}Live dashboard{% else %}Not connected yet{% endif %}
@@ -68,27 +68,6 @@ layout: default
        data-analytics-event="dashboard_open" data-analytics-label="analytics-page">
       Open dashboard in a new tab
     </a>
-  </section>
-
-  <section class="analytics-principles analytics-connected-guide" aria-labelledby="analytics-guide-title">
-    <h2 id="analytics-guide-title">How to read this dashboard</h2>
-    <div class="analytics-principles-grid">
-      <article>
-        <span aria-hidden="true">01</span>
-        <h3>Discovery</h3>
-        <p>See which channels, device categories, and broad regions help people find this portfolio.</p>
-      </article>
-      <article>
-        <span aria-hidden="true">02</span>
-        <h3>Research interest</h3>
-        <p>Compare engagement with publications, projects, and long-form posts.</p>
-      </article>
-      <article>
-        <span aria-hidden="true">03</span>
-        <h3>Meaningful actions</h3>
-        <p>Track aggregated interest in papers, code, the CV, and ways to get in touch.</p>
-      </article>
-    </div>
   </section>
   {% else %}
   <section class="analytics-empty-card" aria-labelledby="analytics-status-title">
