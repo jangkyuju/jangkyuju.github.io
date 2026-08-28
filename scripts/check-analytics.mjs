@@ -32,7 +32,7 @@ for (const [name, source] of [
   ["portfolio tracker", tracker],
 ]) {
   const script = Array.from(
-    source.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g),
+    source.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi),
     (match) => match[1],
   ).find((body) => body.trim());
   check(Boolean(script), `${name} inline script is missing.`);
