@@ -5,7 +5,7 @@
 experience:
   - organization: "Georgia Institute of Technology"
     location: "Atlanta, GA"
-    logo: "/assets/img/logos/georgia-tech.svg"
+    logo: "/assets/img/logos/georgia-tech-stacked.png"
     logo_alt: "Georgia Institute of Technology logo"
     roles:
       - period: "2026 - Present"
@@ -35,7 +35,7 @@ experience:
 
   - organization: "Korea University"
     location: "Seoul, Korea"
-    logo: "/assets/img/logos/korea-university.svg"
+    logo: "/assets/img/logos/korea-university-stacked.png"
     logo_alt: "Korea University logo"
     roles:
       - period: "2021 - 2023"

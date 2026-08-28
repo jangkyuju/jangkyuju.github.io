@@ -2118,11 +2118,22 @@ h6 {
   gap: 2.25rem;
 }
 
+.employment-page .cv-name {
+  margin-bottom: 0.5rem;
+}
+
 .employment-employer {
   display: grid;
   grid-template-columns: 7rem minmax(0, 1fr);
   gap: 1.5rem;
   align-items: start;
+  padding-bottom: 2.25rem;
+  border-bottom: 1px solid var(--custom-border);
+}
+
+.employment-employer:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .employment-logo-wrap {
@@ -2168,17 +2179,11 @@ h6 {
 }
 
 .employment-role {
-  padding-top: 1rem;
-  border-top: 1px solid var(--custom-border);
-}
-
-.employment-role:first-child {
   padding-top: 0;
-  border-top: none;
 }
 
 .employment-role + .employment-role {
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .employment-role .cv-role {
@@ -2189,6 +2194,24 @@ h6 {
 
 .employment-role .cv-highlights {
   margin-top: 0.75rem;
+}
+
+.employment-list .cv-org {
+  font-size: 1.2rem;
+}
+
+.employment-list .cv-role {
+  font-size: 1.125rem;
+}
+
+.employment-list .cv-team,
+.employment-list .cv-location {
+  font-size: 0.975rem;
+}
+
+.employment-list .cv-period,
+.employment-list .cv-highlights li {
+  font-size: 1.05rem;
 }
 
 @media (max-width: 640px) {
