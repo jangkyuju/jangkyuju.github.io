@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<div class="page-container cv-page employment-page">
+  <header class="cv-header">
+    <div class="cv-header-left">
+      <h1 class="cv-name">Employment</h1>
+      <p class="cv-tagline">Research, engineering, and data science experience</p>
+    </div>
+  </header>
+
+  <section class="cv-section" aria-labelledby="employment-history-title">
+    <h2 class="cv-section-title" id="employment-history-title">Professional Experience</h2>
+
+    {% for exp in site.data.cv.experience %}
+    <article class="cv-entry">
+      <div class="cv-entry-header">
+        <div>
+          <span class="cv-org">{{ exp.organization }}</span>
+          <span class="cv-role">{{ exp.role }}</span>
+          {% if exp.team %}
+          <span class="cv-team">{{ exp.team }}</span>
+          {% endif %}
+        </div>
+        <div class="cv-entry-meta">
+          <span class="cv-period">{{ exp.period }}</span>
+          {% if exp.location %}
+          <span class="cv-location">{{ exp.location }}</span>
+          {% endif %}
+        </div>
+      </div>
+      {% if exp.highlights %}
+      <ul class="cv-highlights">
+        {% for item in exp.highlights %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </section>
+</div>
