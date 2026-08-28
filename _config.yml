@@ -7,11 +7,11 @@ lang: en
 timezone: Asia/Seoul
 
 title: Jangkyu Ju
-tagline: Research Engineer & Data Scientist | Human-AI Interaction & HCI
+tagline: Ph.D. Student in Computer Science | Human-AI Interaction & Information Visualization
 description: >-
-  Research Engineer & Data Scientist at Hyundai Motor Group.
-  Working across human-AI interaction, visual cognition, user behavior analytics,
-  adaptive interfaces, and automotive UX.
+  Ph.D. student in Computer Science at the Georgia Institute of Technology,
+  researching human-AI interaction, AI interface design, information visualization,
+  and trust in AI-enabled systems.
 
 # GitHub Pages URL - update before deploying
 # For username.github.io repo: url = "https://USERNAME.github.io", baseurl = ""
@@ -27,7 +27,7 @@ github:
 
 social:
   name: Jangkyu Ju
-  email: ju.jk.psych@gmail.com
+  email: jju39@gatech.edu
   links:
     - https://www.linkedin.com/in/jangkyu-ju-99666724a/
     - https://github.com/jangkyuju

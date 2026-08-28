@@ -1,9 +1,13 @@
 # News items are displayed in this order on the homepage.
 # Entries are based on the site CV or details provided directly by the site owner.
 
+- date: "Aug 2026"
+  content: >
+    I began my Ph.D. in Computer Science at Georgia Tech and joined the VisualizaXiong Lab, advised by Cindy Xiong Bearfield.
+
 - date: "Jul 2026"
   content: >
-    My role at Hyundai Motor Group concludes. I look forward to beginning the next stage of my academic career at Georgia Tech!
+    I concluded my role at Hyundai Motor Group after working as a Research Engineer and Data Scientist from 2023 to 2026.
 
 - date: "Mar 2026"
   content: >

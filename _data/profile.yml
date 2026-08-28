@@ -4,46 +4,47 @@
 # ====================
 
 name: Jangkyu Ju
-tagline: "Research Engineer / Data Scientist / AI Engineer"
-title: Research Engineer & Data Scientist
-lab: Data Insight Team, ICT Management Division
-university: Hyundai Motor Group
-email: ju.jk.psych@gmail.com
+tagline: "Ph.D. Student in Computer Science"
+title: Ph.D. Student in Computer Science
+lab: VisualizaXiong Lab, School of Interactive Computing
+university: Georgia Institute of Technology
+email: jju39@gatech.edu
 avatar: "/assets/img/yosemite_image_renew.jpg"
 
 # Social links
 google_scholar: "https://scholar.google.com/citations?user=qA_-6TQAAAAJ&hl=en"
 linkedin: "https://www.linkedin.com/in/jangkyu-ju-99666724a/"
 github: "https://github.com/jangkyuju"
-cv_pdf: "https://drive.google.com/file/d/1GTcXFu7hCGWysBTTHcypUHELxeH-0O3x/view"
+cv_pdf: "/assets/files/Jangkyu_Ju_CV.pdf"
 
 # Bio paragraphs (supports HTML)
 bio:
   - >
-    I am a Research Engineer &amp; Data Scientist at Hyundai Motor Group,
-    where I work on large-scale user behavior analysis, user modeling (ML),
-    and human-AI interaction design for in-vehicle infotainment (IVI) systems.
-    I hold an M.S. in Behavioral &amp; Cognitive Neuroscience from
-    <a href="https://psychology.korea.ac.kr" target="_blank" rel="noopener noreferrer" class="text-link">Korea University, School of Psychology</a>.
+    I am a Ph.D. student in
+    <a href="https://www.cc.gatech.edu/degree-programs/phd-computer-science" target="_blank" rel="noopener noreferrer" class="text-link">Computer Science</a>
+    at the <a href="https://www.gatech.edu/" target="_blank" rel="noopener noreferrer" class="text-link">Georgia Institute of Technology</a>,
+    affiliated with the School of Interactive Computing. I am a Graduate Student Researcher in the
+    <a href="https://cyxiong.com/visualizaxiong-lab/" target="_blank" rel="noopener noreferrer" class="text-link">VisualizaXiong Lab</a>,
+    advised by <a href="https://cyxiong.com/" target="_blank" rel="noopener noreferrer" class="text-link">Cindy Xiong Bearfield</a>.
   - >
-    My work sits at the intersection of <strong>Cognitive Science</strong>,
-    <strong>Human-Computer Interaction</strong>, and <strong>Artificial Intelligence</strong>.
-    I study how information presentation shapes human cognition, judgment, and action -
-    and build intelligent systems that align with how people actually perceive and process information.
+    My research centers on <strong>human-AI interaction</strong> and
+    <strong>AI interface design</strong>, with a particular interest in how
+    <strong>information visualization</strong> choices shape people's cognition,
+    perception, and trust when they interact with AI systems.
   - >
-    I will begin my Ph.D. studies in
-    <a href="https://www.cc.gatech.edu/degree-programs/phd-human-centered-computing" target="_blank" rel="noopener noreferrer" class="text-link">Human-Centered Computing</a>
-    at <a href="https://www.gatech.edu/" target="_blank" rel="noopener noreferrer" class="text-link">Georgia Tech</a>.
-    I will work with the <a href="https://vis.gatech.edu/" target="_blank" rel="noopener noreferrer" class="text-link">GT Visualization Lab</a>
-    and be advised by <a href="https://cyxiong.com/" target="_blank" rel="noopener noreferrer" class="text-link">Cindy Xiong Bearfield</a>.
+    Before joining Georgia Tech, I worked at Hyundai Motor Group as a Data Scientist
+    and Research Engineer, focusing on large-scale user behavior analysis, metrics and
+    dashboard development, machine learning, and personalized in-vehicle interfaces.
+    I hold an M.S. in Behavioral and Cognitive Neuroscience from
+    <a href="https://psychology.korea.ac.kr" target="_blank" rel="noopener noreferrer" class="text-link">Korea University</a>.
 
 # Research interests (pill badges on home page)
 research_interests:
   - Human-AI Interaction
-  - Data Science & Visualization
-  - Visual Attention
+  - AI Interface Design
+  - Information Visualization
+  - Trust in AI-Enabled Systems
   - Cognitive Science
-  - Adaptive Interfaces
 
 # Peer review service metadata (not currently displayed)
 peer_review_venues:
@@ -53,8 +54,8 @@ peer_review_venues:
 
 # Collaboration topics (shown on contact page)
 collaboration_topics:
-  - Human-centered AI systems design and evaluation
-  - Visual attention and cognitive mechanisms in HCI
-  - Adaptive user interfaces and personalization
-  - Vehicle infotainment systems and user experience
-  - Large-scale user behavior analysis
+  - Human-AI interaction
+  - AI interface design and evaluation
+  - Information visualization
+  - Trust and perception of AI-enabled systems
+  - Human-centered AI

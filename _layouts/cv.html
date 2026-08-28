@@ -53,6 +53,7 @@ layout: default
       </div>
     </div>
 
+    {% if site.data.profile.cv_pdf %}
     <div class="cv-header-right">
       <a href="{{ site.data.profile.cv_pdf }}" target="_blank" rel="noopener noreferrer" class="cv-download-btn"
          data-analytics-event="cv_download" data-analytics-label="cv-page">
@@ -65,6 +66,7 @@ layout: default
         Download CV (PDF)
       </a>
     </div>
+    {% endif %}
   </div>
 
   <!-- ============================================================
