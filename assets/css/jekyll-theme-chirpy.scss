@@ -1189,11 +1189,13 @@ h6 {
   .pub-links-row { flex-direction: column; }
 }
 
-.posters-section {
+.posters-section,
+.articles-section {
   margin-top: 4rem;
 }
 
-.posters-section h2 {
+.posters-section h2,
+.articles-section h2 {
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
