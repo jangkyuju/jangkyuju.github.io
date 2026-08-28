@@ -27,14 +27,36 @@ const check = (condition, message) => {
   if (!condition) failures.push(message);
 };
 
+const findInlineScript = (source) => {
+  const lowerSource = source.toLowerCase();
+  let cursor = 0;
+
+  while (cursor < source.length) {
+    const openingStart = lowerSource.indexOf("<script", cursor);
+    if (openingStart === -1) return undefined;
+
+    const openingEnd = source.indexOf(">", openingStart + 7);
+    if (openingEnd === -1) return undefined;
+
+    const closingStart = lowerSource.indexOf("</script", openingEnd + 1);
+    if (closingStart === -1) return undefined;
+
+    const closingEnd = source.indexOf(">", closingStart + 8);
+    if (closingEnd === -1) return undefined;
+
+    const body = source.slice(openingEnd + 1, closingStart);
+    if (body.trim()) return body;
+    cursor = closingEnd + 1;
+  }
+
+  return undefined;
+};
+
 for (const [name, source] of [
   ["GA4 tag", googleTag],
   ["portfolio tracker", tracker],
 ]) {
-  const script = Array.from(
-    source.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script\s*>/gi),
-    (match) => match[1],
-  ).find((body) => body.trim());
+  const script = findInlineScript(source);
   check(Boolean(script), `${name} inline script is missing.`);
   if (script) {
     try {
