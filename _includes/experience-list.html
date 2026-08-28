@@ -1,0 +1,42 @@
+<div class="employment-list">
+  {% for employer in site.data.cv.experience %}
+  <article class="employment-employer">
+    <div class="employment-logo-wrap">
+      <img src="{{ employer.logo | relative_url }}"
+           alt="{{ employer.logo_alt | default: employer.organization | escape }}"
+           class="employment-logo" loading="lazy">
+    </div>
+
+    <div class="employment-content">
+      <header class="employment-org-header">
+        <h3 class="cv-org">{{ employer.organization }}</h3>
+        <span class="cv-location">{{ employer.location }}</span>
+      </header>
+
+      <div class="employment-roles">
+        {% for position in employer.roles %}
+        <section class="employment-role">
+          <div class="employment-role-header">
+            <div>
+              <span class="cv-role">{{ position.role }}{% if position.team %} <span aria-hidden="true">|</span> {{ position.team }}{% endif %}</span>
+              {% if position.advisor %}
+              <span class="cv-team">Advisor: {{ position.advisor }}</span>
+              {% endif %}
+            </div>
+            <span class="cv-period">{{ position.period }}</span>
+          </div>
+
+          {% if position.highlights %}
+          <ul class="cv-highlights">
+            {% for item in position.highlights %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </section>
+        {% endfor %}
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</div>

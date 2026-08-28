@@ -3,52 +3,65 @@
 # ====================
 
 experience:
-  - organization: "Hyundai Motor Group"
-    role: "Research Engineer / Data Scientist"
-    team: "Data Insight Team, ICT Division"
-    period: "2025 - Present"
-    location: "Seoul, South Korea"
-    highlights:
-      - "Large-scale cross-domain data analysis (e.g., vehicle log, customer, sales, production), metrics development and dashboard visualization"
-      - "Optimization and automation of ML models and data pipelines for scalable deployment"
+  - organization: "Georgia Institute of Technology"
+    location: "Atlanta, GA"
+    logo: "/assets/img/logos/georgia-tech.svg"
+    logo_alt: "Georgia Institute of Technology logo"
+    roles:
+      - period: "2026 - Present"
+        role: "Graduate Student Researcher"
+        team: "VisualizaXiong Lab"
+        advisor: "Cindy Xiong Bearfield"
+        highlights:
+          - "Research on human-AI interaction and AI interface design, with a focus on how information visualization choices shape people's cognition, perception, and trust when interacting with AI systems"
 
   - organization: "Hyundai Motor Group"
-    role: "Research Engineer"
-    team: "Infotainment Development Center, R&D Division"
-    period: "2023 - 2025"
-    location: "Seoul, South Korea"
-    highlights:
-      - "Large-scale in-vehicle infotainment (IVI) data analysis for modeling interaction behavior"
-      - "ML model and HMI design for personalized IVI recommendation systems"
-      - "Development and evaluation of user behavior metrics for optimizing IVI feature usability"
-      - "Development of IVI database architectures and pipelines for efficient storage and analysis"
+    location: "Seoul, Korea"
+    logo: "/assets/img/logos/hyundai-motor-group.svg"
+    logo_alt: "Hyundai Motor Group logo"
+    roles:
+      - period: "2025 - 2026"
+        role: "Data Scientist"
+        team: "Data Insight Team, ICT Division"
+        highlights:
+          - "Cross-domain data analysis (e.g., vehicle, customer, sales, production), metrics development, dashboard visualization"
+          - "Optimization and automation of ML models and data pipelines for scalable deployment"
+      - period: "2023 - 2025"
+        role: "Research Engineer"
+        team: "Infotainment Development Center, Advanced Vehicle Platform (AVP) Division"
+        highlights:
+          - "Large-scale in-vehicle infotainment (IVI) data analysis for modeling user behavior and metrics development"
+          - "Machine Learning model and Human-Machine Interface design for personalized IVI recommendation systems"
 
-  - organization: "Korea University, School of Psychology"
-    role: "Graduate Researcher"
-    team: "Human Performance Lab"
-    period: "2021 - 2023"
-    location: "Seoul, South Korea"
-    highlights:
-      - "Visual complexity of automotive head-up displays and attentional tunneling in driving (in collab. with Cognitive Systems Lab, Korea University, PI: Prof. Christian Wallraven)"
-      - "Exploration for reward information in modulating Value-Driven Attentional Capture (VDAC)"
-      - "Computational simulation of associative learning models in VDAC"
+  - organization: "Korea University"
+    location: "Seoul, Korea"
+    logo: "/assets/img/logos/korea-university.svg"
+    logo_alt: "Korea University logo"
+    roles:
+      - period: "2021 - 2023"
+        role: "Graduate Student Researcher"
+        team: "Human Performance Lab, School of Psychology"
+        advisor: "Yang-Seok Cho"
+        highlights:
+          - "Visual complexity of automotive head-up displays and attentional tunneling in driving"
+          - "Exploration for reward information in modulating Value-Driven Attentional Capture (VDAC)"
+          - "Computational simulation of associative learning models in VDAC"
+      - period: "2020"
+        role: "Research Assistant"
+        team: "Human Performance Lab, School of Psychology"
+        highlights:
+          - "Behavioral experiments (keypress, mouse-tracking, neuroimaging), statistical analysis"
 
-  - organization: "Korea University, School of Psychology"
-    role: "Research Assistant"
-    team: "Human Performance Lab"
-    period: "2020"
-    location: "Seoul, South Korea"
-    highlights:
-      - "Behavioral experiments (key-press, mouse-tracking, neuro-imaging)"
-      - "Statistical analysis and ML"
-
-  - organization: "L'Oreal Korea"
-    role: "Data Analyst Intern"
-    team: "Human Resources"
-    period: "2019"
-    location: "Seoul, South Korea"
-    highlights:
-      - "Company-wide digital platform data analysis to support HR and operations decisions"
+  - organization: "L'Oréal Korea"
+    location: "Seoul, Korea"
+    logo: "/assets/img/logos/loreal.svg"
+    logo_alt: "L'Oréal logo"
+    roles:
+      - period: "2019"
+        role: "Data Analyst Intern"
+        team: "Human Resources"
+        highlights:
+          - "Company-wide data analysis to support HR and operations decisions"
 
 education:
   - degree: "M.S. in Behavioral and Cognitive Neuroscience"

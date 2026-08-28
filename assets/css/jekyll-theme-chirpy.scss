@@ -2111,6 +2111,113 @@ h6 {
   line-height: 1.65;
 }
 
+/* Employment groups */
+.employment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.employment-employer {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.employment-logo-wrap {
+  width: 7rem;
+  min-height: 4.75rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0.15rem;
+}
+
+.employment-logo {
+  display: block;
+  width: 100%;
+  height: 4.5rem;
+  object-fit: contain;
+}
+
+.employment-content {
+  min-width: 0;
+}
+
+.employment-org-header,
+.employment-role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.employment-org-header {
+  margin-bottom: 0.75rem;
+}
+
+.employment-org-header .cv-org {
+  margin: 0;
+}
+
+.employment-org-header .cv-location,
+.employment-role-header .cv-period {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.employment-role {
+  padding-top: 1rem;
+  border-top: 1px solid var(--custom-border);
+}
+
+.employment-role:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.employment-role + .employment-role {
+  margin-top: 1.25rem;
+}
+
+.employment-role .cv-role {
+  margin: 0;
+  color: var(--custom-card-fg);
+  font-weight: 500;
+}
+
+.employment-role .cv-highlights {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .employment-employer {
+    grid-template-columns: 4rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .employment-logo-wrap {
+    width: 4rem;
+    min-height: 3.25rem;
+  }
+
+  .employment-logo {
+    height: 3rem;
+  }
+
+  .employment-org-header,
+  .employment-role-header {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .employment-org-header .cv-location,
+  .employment-role-header .cv-period {
+    text-align: left;
+  }
+}
+
 /* Publications */
 .cv-pub-year-group {
   display: flex;
