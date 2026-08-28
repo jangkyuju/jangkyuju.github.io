@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll-theme-chirpy", "~> 7.1"
+gem "jekyll-theme-chirpy", "~> 7.6"
 
 # Security floors for transitive Jekyll dependencies.
 gem "addressable", ">= 2.9.0", "< 3"
