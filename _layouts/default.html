@@ -17,6 +17,26 @@
 {% assign site_head = site_head | replace: loading_polyfill_href, loading_polyfill_secure %}
 {{ site_head }}
 <body>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jangkyu Ju",
+    "url": "https://jangkyuju.github.io",
+    "image": "https://jangkyuju.github.io/assets/img/yosemite_image_renew.jpg",
+    "jobTitle": "Ph.D. Student in Computer Science",
+    "description": "Ph.D. student in Computer Science at the Georgia Institute of Technology, researching human-AI interaction, AI interface design, information visualization, and trust in AI-enabled systems.",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Georgia Institute of Technology"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/jangkyu-ju-99666724a/",
+      "https://github.com/jangkyuju",
+      "https://scholar.google.com/citations?user=qA_-6TQAAAAJ"
+    ]
+  }
+  </script>
   {% include google-analytics.html %}
 
   {% include custom-topbar.html %}

@@ -34,7 +34,7 @@ social:
     - https://scholar.google.com/citations?user=qA_-6TQAAAAJ
 
 # Add a real image path when a profile photo is available.
-avatar:
+avatar: /assets/img/yosemite_image_renew.jpg
 social_preview_image: /assets/img/social-preview.png
 
 # ====================
