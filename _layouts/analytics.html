@@ -7,7 +7,7 @@ layout: default
     max-width: none;
   }
 
-  .analytics-subtitle-row {
+  .analytics-title-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -15,21 +15,13 @@ layout: default
     width: 100%;
   }
 
-  .analytics-subtitle-row .page-subtitle,
-  .analytics-subtitle-row .analytics-status-badge {
+  .analytics-title-row h1 {
     margin: 0;
   }
 
-  .analytics-subtitle-row .analytics-status-badge {
+  .analytics-title-row .analytics-status-badge {
     flex: 0 0 auto;
     white-space: nowrap;
-  }
-
-  @media (max-width: 720px) {
-    .analytics-subtitle-row {
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
   }
 </style>
 
@@ -37,11 +29,8 @@ layout: default
 
 <div class="page-container analytics-page{% if analytics_dashboard_url == "" %} analytics-empty-page{% endif %}">
   <header class="analytics-empty-header">
-    <h1>Analytics</h1>
-    <div class="analytics-subtitle-row">
-      <p class="page-subtitle">
-        Exploratory data analysis of this website
-      </p>
+    <div class="analytics-title-row">
+      <h1>Analytics</h1>
       <span class="analytics-status-badge{% if analytics_dashboard_url != "" %} analytics-status-connected{% endif %}">
         {% if analytics_dashboard_url != "" %}Live dashboard{% else %}Not connected yet{% endif %}
       </span>
