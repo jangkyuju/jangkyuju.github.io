@@ -2,6 +2,11 @@ source "https://rubygems.org"
 
 gem "jekyll-theme-chirpy", "~> 7.1"
 
+# Security floors for transitive Jekyll dependencies.
+gem "addressable", ">= 2.9.0", "< 3"
+gem "concurrent-ruby", ">= 1.3.7", "< 2"
+gem "json", ">= 2.19.9", "< 3"
+
 group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-sitemap"

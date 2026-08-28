@@ -150,10 +150,13 @@ exclude:
   - LICENSE
   - "*.zip"
   - package.json
+  - package-lock.json
   - DEVELOPMENT.md
   - scripts
   - agent-design.md
   - CLAUDE.md
+  - AGENTS.md
+  - SECURITY.md
   - .claude
   - vendor
   - node_modules
